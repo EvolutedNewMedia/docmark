@@ -57,7 +57,7 @@ class Documenter
 
         if (file_exists($path) && is_readable($path)) {
 
-            require_once($path):
+            require_once($path);
 
             $this->config = $config;
         } else {

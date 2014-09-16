@@ -39,16 +39,17 @@ define(
 // -------------------------------------------------------------------
 // Set the system autoloader
 // -------------------------------------------------------------------
-if (file_exists('system' . DS . 'SplClassLoader.php')) {
+if (file_exists('system' . DS . 'Psr4AutoloaderClass.php')) {
 
-    require_once('system' . DS . 'SplClassLoader.php');
+    require_once('system' . DS . 'Psr4AutoloaderClass.php');
 } else {
 
-    die("Fatal Error: Composer autoload file not found!");
+    die("Fatal Error: System autoload file not found!");
 }
 
-$classLoader = new SplClassLoader('Documenter24', dirname(__FILE__));
-$classLoader->register();
+$loader = new Psr4AutoloaderClass;
+$loader->register();
+$loader->addNamespace('Documenter24', dirname(__FILE__));
 
 // -------------------------------------------------------------------
 // Start Documenter24
