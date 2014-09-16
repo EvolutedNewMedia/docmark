@@ -4,7 +4,6 @@
  *
  * Config file stores all needed configuration information
  *
- * @package  Documenter-Config
  * @author  Turn24 Team <info@turn24.com>
  * @copyright  Copyright (c), Turn 24 Ltd.
  * @license MIT
@@ -14,7 +13,10 @@
 
 $config = array(
 
-
+    /**
+     * Documentation Root (Relative to root)
+     */
+    'doc_root' => 'docs/',
 
 
 
