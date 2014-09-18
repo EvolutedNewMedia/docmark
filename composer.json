@@ -16,6 +16,7 @@
     "minimum-stability": "dev",
     "require": {
         "danielstjules/stringy": "dev-master",
-        "symfony/http-foundation": "2.6.*@dev"
+        "symfony/http-foundation": "2.6.*@dev",
+        "michelf/php-markdown": "1.4.*"
     }
 }

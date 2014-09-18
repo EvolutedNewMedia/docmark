@@ -57,8 +57,9 @@ $loader->addNamespace('Documenter24', dirname(__FILE__));
 
 $documenter = new \Documenter24\System\Documenter();
 
-echo '<pre>';
-print_r($documenter->request);
-echo '</pre>';
+// process the request
+// will return a view object
+$view = $documenter->process();
 
-
+// Display the page to the user
+$view->display();
