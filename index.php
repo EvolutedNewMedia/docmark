@@ -11,6 +11,17 @@
  * @since  Version 0.1.0
  */
 
+/**
+ * debug function to make life easier
+ *
+ */
+function debug($var)
+{
+    echo '<pre>';
+    var_dump($var);
+    echo '</pre>';
+}
+
 if (! defined('DS')) {
     define('DS', DIRECTORY_SEPARATOR);
 }
@@ -32,7 +43,8 @@ if (file_exists('vendor' . DS . 'autoload.php')) {
 define(
     'ROOT',
     \Stringy\Stringy::create(
-        dirname(__FILE__)
+        dirname(__FILE__),
+        'UTF-8'
     )->ensureRight('/')
 );
 

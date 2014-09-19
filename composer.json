@@ -17,6 +17,7 @@
     "require": {
         "danielstjules/stringy": "dev-master",
         "symfony/http-foundation": "2.6.*@dev",
+        "symfony/finder": "2.6.*@dev",
         "michelf/php-markdown": "1.4.*"
     }
 }
