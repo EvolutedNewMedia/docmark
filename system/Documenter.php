@@ -36,6 +36,7 @@ class Documenter
     /**
      * start up the system, load configs etc...
      *
+     * @access public
      */
     public function __construct()
     {
@@ -66,8 +67,36 @@ class Documenter
         }
     }
 
+    /**
+     * process the request so we can work out
+     * what view we need to process and serve
+     *
+     * @access public
+     * @return object   Documenter24\System\View Object
+     */
+    public function process()
+    {
+        $query = $this->request->query->keys();
+
+        if (isset($query['0']) && ! empty($query['0'])) {
+
+            $query['0'] = ltrim($query['0'], '/');
+            $queryBits = explode('/', $query['0']);
 
 
 
 
+
+        } else {
+
+            // homepage
+        }
+
+
+        echo '<pre>';
+        print_r($this->request->query->keys());
+        echo '</pre>';
+
+        return new \Documenter24\System\View();
+    }
 }

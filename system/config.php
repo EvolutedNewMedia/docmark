@@ -18,8 +18,22 @@ $config = array(
      */
     'doc_root' => 'docs/',
 
+    'cache' => array( // TODO: Coming in later version
+        /**
+         * Enable caching. Half way house between on fly and static generation
+         */
+        'enable' => false,
 
+        /**
+         * Cache Lifetime in seconds
+         */
+        'cache_time' => 3600,
 
+        /**
+         * Cache location
+         */
+        'cache_root' => 'cache/'
+    )
 
 
 
