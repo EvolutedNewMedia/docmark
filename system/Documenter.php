@@ -95,7 +95,7 @@ class Documenter
         $path = $this->findFile($queryBits, $docRoot);
 
 
-        return new \Documenter24\System\View();
+        return new \Documenter24\System\View($this, $path);
     }
 
 
