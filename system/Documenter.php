@@ -34,6 +34,13 @@ class Documenter
     public $request = null;
 
     /**
+     * The url we are loading
+     *
+     * @access public
+     */
+    public $url = '/';
+
+    /**
      * start up the system, load configs etc...
      *
      * @access public
@@ -83,6 +90,7 @@ class Documenter
 
         if (isset($query['0']) && ! empty($query['0'])) {
 
+            $this->url = $query['0'];
             $query['0'] = ltrim($query['0'], '/');
             $queryBits = explode('/', $query['0']);
 
