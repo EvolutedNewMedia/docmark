@@ -98,12 +98,23 @@ class DocMark
 
             // homepage
             $queryBits = array();
+            $isHome = true;
         }
 
         $path = $this->findFile($queryBits, $docRoot);
 
+        if ($path !== false && isset($isHome) && $isHome) {
 
-        return new \DocMark\System\View($this, $path);
+            return new \DocMark\System\View\Home($this, $path);
+
+        } elseif ($path !== false && (! isset($isHome) || $isHome === false)) {
+
+            return new \DocMark\System\View\Page($this, $path);
+
+        } else {
+
+            return new \DocMark\System\View\Error($this, $path);
+        }
     }
 
 
@@ -156,7 +167,7 @@ class DocMark
 
                 // we're in a directory, check for an index.md file
                 $finder = new Finder();
-                $finder->in($path)->name('index.md');
+                $finder->in($path)->name('index.md')->depth('==0');
 
                 if ($finder->count() == 1) {
 

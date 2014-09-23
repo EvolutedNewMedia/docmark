@@ -15,8 +15,16 @@ use \Symfony\Component\Finder\Finder;
  * @since  Version 0.1.0
  */
 
-class View
+abstract class View
 {
+    /**
+     * the template this view will load, relative to the templates dir
+     * set on child view classes
+     *
+     * @access public
+     */
+    public $template = null;
+
     /**
      * copy of the DocMark object
      *
@@ -39,20 +47,56 @@ class View
     protected $vars = array();
 
     /**
+     * instance of the ViewHelper
+     *
+     * @access public
+     */
+    public $helper = null;
+
+    /**
+     * display method to determine how each page template should
+     * handle the data / it's templates
+     */
+    abstract public function display();
+
+    /**
      * constructor, set the file we are loading
      *
      * @param object        Copy of the DocMark object
      * @param string        The file to load
-     * @param null|string   Copy of the html to output (optional)
+     * @param null|string   Copy of the html page to output (optional)
      */
-    public function __construct($docmark, $view, $output = null)
+    public function __construct($docmark, $view, $page = null)
     {
         $this->docmark = $docmark;
         $this->view = $view;
+        $this->helper = new \DocMark\System\ViewHelper;
 
-        if (! empty($output)) {
+        if (! empty($page)) {
 
-            $this->output = $output;
+            $this->vars['page'] = $page;
+        }
+    }
+
+    /**
+     * take the template and the variables and generate the page
+     *
+     * @return  string      HTML page to output
+     */
+    public function generateOutput()
+    {
+        $this->vars['helper'] = $this->helper;
+        $template = ROOT . 'templates' . DS . $this->template;
+
+        if (file_exists($template)) {
+
+            return $this->helper->processTemplate(
+                $template,
+                $this->vars
+            );
+        } else {
+
+            $this->showError();
         }
     }
 
@@ -341,13 +385,17 @@ class View
         }
     }
 
-    public function display()
+    /**
+     * get out of jail error function
+     * if something happens while processing the view
+     * and it was otherwise "ok" can use this to show a 404
+     *
+     */
+    public function showError()
     {
-        $this->generatePage();
-        $this->generateMenu();
-        $this->generateBreadcrumb();
+        $view = new \DocMark\System\View\Error($this->docmark, false);
 
-        echo $this->vars['page'];
+        $view->systemError = true;
+        $view->display();
     }
-
 }
