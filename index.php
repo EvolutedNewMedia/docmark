@@ -1,13 +1,13 @@
 <?php
 /**
- * Turn24/Documenter
+ * Turn24/DocMark
  *
  * Index file, receives all requests and process
  *
  * @author  Turn24 Team <info@turn24.com>
  * @copyright  Copyright (c), Turn 24 Ltd.
  * @license MIT
- * @link http://github.com/Turn24/Documenter
+ * @link http://github.com/Turn24/DocMark
  * @since  Version 0.1.0
  */
 
@@ -61,17 +61,17 @@ if (file_exists('system' . DS . 'Psr4AutoloaderClass.php')) {
 
 $loader = new Psr4AutoloaderClass;
 $loader->register();
-$loader->addNamespace('Documenter24', dirname(__FILE__));
+$loader->addNamespace('DocMark', dirname(__FILE__));
 
 // -------------------------------------------------------------------
-// Start Documenter24
+// Start DocMark
 // -------------------------------------------------------------------
 
-$documenter = new \Documenter24\System\Documenter();
+$docmark = new \DocMark\System\Docmark();
 
 // process the request
 // will return a view object
-$view = $documenter->process();
+$view = $docmark->process();
 
 // Display the page to the user
 $view->display();

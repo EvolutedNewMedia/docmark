@@ -1,23 +1,23 @@
 <?php
-namespace Documenter24\System;
+namespace DocMark\System;
 
 use \Symfony\Component\HttpFoundation\Request;
 use \Symfony\Component\Finder\Finder;
 
 /**
- * Turn24/Documenter
+ * Turn24/DocMark
  *
- * Main documenter file that handles the requires and
+ * Main DocMark file that handles the requires and
  * processes accordingly
  *
  * @author  Turn24 Team <info@turn24.com>
  * @copyright  Copyright (c), Turn 24 Ltd.
  * @license MIT
- * @link http://github.com/Turn24/Documenter
+ * @link http://github.com/Turn24/DocMark
  * @since  Version 0.1.0
  */
 
-class Documenter
+class DocMark
 {
     /**
      * holds all the configuration settings
@@ -79,7 +79,7 @@ class Documenter
      * what view we need to process and serve
      *
      * @access public
-     * @return object   Documenter24\System\View Object
+     * @return object   DocMark\System\View Object
      */
     public function process()
     {
@@ -103,7 +103,7 @@ class Documenter
         $path = $this->findFile($queryBits, $docRoot);
 
 
-        return new \Documenter24\System\View($this, $path);
+        return new \DocMark\System\View($this, $path);
     }
 
 
@@ -173,5 +173,4 @@ class Documenter
         // return false
         return false;
     }
-
 }

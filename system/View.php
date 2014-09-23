@@ -1,28 +1,28 @@
 <?php
-namespace Documenter24\System;
+namespace DocMark\System;
 
 use \Symfony\Component\Finder\Finder;
 
 /**
- * Turn24/Documenter
+ * Turn24/DocMark
  *
  * Main view for standard view functionality
  *
  * @author  Turn24 Team <info@turn24.com>
  * @copyright  Copyright (c), Turn 24 Ltd.
  * @license MIT
- * @link http://github.com/Turn24/Documenter
+ * @link http://github.com/Turn24/DocMark
  * @since  Version 0.1.0
  */
 
 class View
 {
     /**
-     * copy of the documenter object
+     * copy of the DocMark object
      *
      * @access protected
      */
-    protected $documenter = null;
+    protected $docmark = null;
 
     /**
      * the file we are loading
@@ -41,13 +41,13 @@ class View
     /**
      * constructor, set the file we are loading
      *
-     * @param object        Copy of the documenter object
+     * @param object        Copy of the DocMark object
      * @param string        The file to load
      * @param null|string   Copy of the html to output (optional)
      */
-    public function __construct($documenter, $view, $output = null)
+    public function __construct($docmark, $view, $output = null)
     {
-        $this->documenter = $documenter;
+        $this->docmark = $docmark;
         $this->view = $view;
 
         if (! empty($output)) {
@@ -86,7 +86,7 @@ class View
         $finder = new Finder();
 
         // setup the root for all the doc files
-        $docRoot = \Stringy\Stringy::create(ROOT . $this->documenter->config['docRoot'], 'UTF-8');
+        $docRoot = \Stringy\Stringy::create(ROOT . $this->docmark->config['docRoot'], 'UTF-8');
         if ((string) $docRoot->last(1) === '/') {
 
             $docRoot = (string) $docRoot->substr(0, -1);
@@ -204,12 +204,12 @@ class View
             $menuItem['link'] = $urlPath;
 
             // check active status
-            if ($menuItem['link'] === $this->documenter->url) {
+            if ($menuItem['link'] === $this->docmark->url) {
 
                 // current menu item
                 $menuItem['active'] = true;
 
-            } elseif (\Stringy\Stringy::create($this->documenter->url, 'UTF-8')->startsWith($menuItem['link'])) {
+            } elseif (\Stringy\Stringy::create($this->docmark->url, 'UTF-8')->startsWith($menuItem['link'])) {
 
                 // this is a parent of the active item
                 $menuItem['activeParent'] = true;
@@ -265,8 +265,8 @@ class View
         // set the home item
         $breadcrumb = array(
             array(
-                'label' => $this->documenter->config['breadcrumb']['homeLabel'],
-                'link' => $this->documenter->config['breadcrumb']['homeLink']
+                'label' => $this->docmark->config['breadcrumb']['homeLabel'],
+                'link' => $this->docmark->config['breadcrumb']['homeLink']
             )
         );
 
