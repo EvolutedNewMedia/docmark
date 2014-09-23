@@ -16,7 +16,7 @@ $config = array(
     /**
      * Documentation Root (Relative to root)
      */
-    'doc_root' => 'docs/',
+    'docRoot' => 'docs/',
 
     'cache' => array( // TODO: Coming in later version
         /**
@@ -27,12 +27,24 @@ $config = array(
         /**
          * Cache Lifetime in seconds
          */
-        'cache_time' => 3600,
+        'cacheTime' => 3600,
 
         /**
          * Cache location
          */
-        'cache_root' => 'cache/'
+        'cacheRoot' => 'cache/'
+    ),
+
+    'breadcrumb' => array(
+        /**
+         * set the label for breadcrumb home
+         */
+        'homeLabel' => 'Home',
+
+        /**
+         * set the home url
+         */
+        'homeLink' => '/'
     )
 
 

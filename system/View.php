@@ -32,18 +32,11 @@ class View
     protected $view = null;
 
     /**
-     * the main content output
+     * variables for the template
      *
      * @access protected
      */
-    protected $output = null;
-
-    /**
-     * the menu array
-     *
-     * @access protected
-     */
-    protected $menu = null;
+    protected $vars = array();
 
     /**
      * constructor, set the file we are loading
@@ -72,9 +65,13 @@ class View
     public function generatePage($return = false)
     {
         $contents = file_get_contents($this->view);
-        $output = \Michelf\MarkdownExtra::defaultTransform($contents);
+        $page = \Michelf\MarkdownExtra::defaultTransform($contents);
+        $this->vars['page'] = $page;
 
-        return ($return) ? $output : $this->output = $output;
+        if ($return) {
+
+            return $page;
+        }
     }
 
     /**
@@ -89,7 +86,7 @@ class View
         $finder = new Finder();
 
         // setup the root for all the doc files
-        $docRoot = \Stringy\Stringy::create(ROOT . $this->documenter->config['doc_root'], 'UTF-8');
+        $docRoot = \Stringy\Stringy::create(ROOT . $this->documenter->config['docRoot'], 'UTF-8');
         if ((string) $docRoot->last(1) === '/') {
 
             $docRoot = (string) $docRoot->substr(0, -1);
@@ -102,8 +99,12 @@ class View
         $finder->in($docRoot)->depth('==0');
 
         $menu = $this->processMenuDirectory($finder, $docRoot, true);
+        $this->vars['menu'] = $menu;
 
-        return ($return) ? $menu : $this->menu = $menu;
+        if ($return) {
+
+            return $menu;
+        }
     }
 
     /**
@@ -245,14 +246,108 @@ class View
         return (! empty($menu)) ? $menu : false;
     }
 
+    /**
+     * generate the breadcrumb array
+     * Uses the menu array at $this->menu
+     * unless an array was passed (incase the menu was returned and not set)
+     *
+     * @param   bool            Whether to return the output or not
+     * @param   array           array of menu options, should have active / activeParent elements set
+     * @return  void|string     String output if param is true
+     */
+    public function generateBreadcrumb($return = false, $menu = null)
+    {
+        if (empty($menu)) {
+
+            $menu = $this->vars['menu'];
+        }
+
+        // set the home item
+        $breadcrumb = array(
+            array(
+                'label' => $this->documenter->config['breadcrumb']['homeLabel'],
+                'link' => $this->documenter->config['breadcrumb']['homeLink']
+            )
+        );
+
+        // loop the menu
+        if (! empty($menu)) {
+
+            foreach ($menu as $item) {
+
+                if (
+                    (isset($item['activeParent']) && $item['activeParent']) ||
+                    (isset($item['active']) && $item['active'])
+                ) {
+
+                    $breadcrumb[] = array(
+                        'label' => $item['label'],
+                        'link' => $item['link']
+                    );
+                }
+
+                // if it's jsut an active parent check children
+                if (
+                    isset($item['activeParent']) && $item['activeParent'] &&
+                    isset($item['children']) && ! empty($item['children'])
+                ) {
+
+                    $this->getBreadcrumbChildren($breadcrumb, $item['children']);
+                }
+            }
+        }
+
+        $this->vars['breadcrumb'] = $breadcrumb;
+
+        if ($return) {
+
+            return $breadcrumb;
+        }
+    }
+
+    /**
+     * recursive function for getting breadcrumb children
+     *
+     * @param   array   the current breadcrumb items, passed by reference
+     * @param   array   the child elements to check
+     */
+    protected function getBreadcrumbChildren(&$breadcrumb, $menu)
+    {
+        // loop the menu
+        if (! empty($menu)) {
+
+            foreach ($menu as $item) {
+
+                if (
+                    (isset($item['activeParent']) && $item['activeParent']) ||
+                    (isset($item['active']) && $item['active'])
+                ) {
+
+                    $breadcrumb[] = array(
+                        'label' => $item['label'],
+                        'link' => $item['link']
+                    );
+                }
+
+                // if it's jsut an active parent check children
+                if (
+                    isset($item['activeParent']) && $item['activeParent'] &&
+                    isset($item['children']) && ! empty($item['children'])
+                ) {
+
+                    $this->getBreadcrumbChildren($breadcrumb, $item['children']);
+                }
+            }
+        }
+    }
 
     public function display()
     {
         $this->generatePage();
-        $menu = $this->generateMenu();
-        debug($menu);
+        $this->generateMenu();
+        $this->generateBreadcrumb();
 
-        echo $this->output;
+        echo $this->vars['page'];
     }
 
 }

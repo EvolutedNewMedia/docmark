@@ -86,7 +86,7 @@ class Documenter
         $query = $this->request->query->keys();
 
         // setup the root for all the doc files
-        $docRoot = ROOT . $this->config['doc_root'];
+        $docRoot = ROOT . $this->config['docRoot'];
 
         if (isset($query['0']) && ! empty($query['0'])) {
 
