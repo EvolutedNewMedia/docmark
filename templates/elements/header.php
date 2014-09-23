@@ -4,8 +4,8 @@
 <!--[if IE 8]>          <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
     <head>
-        <title><?php echo $pageTitle; ?></title>
-        <meta name="description" content="<?php echo $pageTitle;?>" />
+        <title><?php echo $pageTitle . ' :: ' . $siteTitle; ?></title>
+        <meta name="description" content="<?php echo $pageTitle . ' :: ' . $siteTitle; ?>" />
         <meta name="author" content="WHSuite">
         <link rel="icon" href="/assets/img/favicon-blue.png" type="image/x-icon">
         <!-- Mobile -->

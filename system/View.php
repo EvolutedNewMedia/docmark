@@ -71,9 +71,9 @@ abstract class View
         $this->docmark = $docmark;
         $this->view = $view;
         $this->helper = new \DocMark\System\ViewHelper;
-        $this->vars['home'] = array(
-            'label' => $this->docmark->config['homeLabel'],
-            'link' => $this->docmark->config['homeLink']
+        $this->vars['site'] = array(
+            'title' => $this->docmark->config['siteTitle'],
+            'link' => $this->docmark->config['siteLink']
         );
 
         if (! empty($page)) {
@@ -316,8 +316,8 @@ abstract class View
         // set the home item
         $breadcrumb = array(
             array(
-                'label' => $this->docmark->config['homeLabel'],
-                'link' => $this->docmark->config['homeLink']
+                'label' => $this->docmark->config['siteTitle'],
+                'link' => $this->docmark->config['siteLink']
             )
         );
 

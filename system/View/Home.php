@@ -23,5 +23,15 @@ class Home extends \DocMark\System\View\Page
      */
     public $template = 'home.php';
 
+    /**
+     * take the template and the variables and generate the page
+     *
+     * @return  string      HTML page to output
+     */
+    public function generateOutput()
+    {
+        $this->vars['pageTitle'] = $this->docmark->config['indexTitle'];
 
+        return parent::generateOutput();
+    }
 }

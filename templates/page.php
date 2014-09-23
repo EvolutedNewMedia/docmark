@@ -1,4 +1,4 @@
-<?php echo $helper->includeTemplate('header.php', array('pageTitle' => $home['label'])); ?>
+<?php echo $helper->includeTemplate('header.php', array('siteTitle' => $site['title'], 'pageTitle' => $pageTitle)); ?>
 
     <?php /*if ($params['repo']) { ?>
         <a href="https://github.com/<?php echo $params['repo']; ?>" target="_blank" id="github-ribbon" class="hidden-print"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
@@ -7,7 +7,7 @@
         <div class="navbar navbar-fixed-top hidden-print">
             <div class="container-fluid">
                 <a class="brand navbar-brand pull-left" href="/">
-                    <?php echo $pageTitle; ?>
+                    <?php echo $site['title']; ?>
                 </a>
             </div>
         </div>
