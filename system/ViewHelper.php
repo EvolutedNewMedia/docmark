@@ -24,7 +24,7 @@ class ViewHelper
      * @param   array     Array of variables to make available
      * @return  string    The compiled page
      */
-    public function includeTemplate($element, $variables)
+    public function includeTemplate($element, $variables = array())
     {
         $elementPath = ROOT . 'templates' . DS . 'elements' . DS . $element;
 

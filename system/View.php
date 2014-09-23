@@ -71,6 +71,10 @@ abstract class View
         $this->docmark = $docmark;
         $this->view = $view;
         $this->helper = new \DocMark\System\ViewHelper;
+        $this->vars['home'] = array(
+            'label' => $this->docmark->config['homeLabel'],
+            'link' => $this->docmark->config['homeLink']
+        );
 
         if (! empty($page)) {
 
@@ -218,7 +222,7 @@ abstract class View
         $itemName = str_replace('.md', '', $itemName);
 
         // set the name of the item
-        $menuItem['label'] = $itemName;
+        $menuItem['label'] = (string) \Stringy\Stringy::create($itemName, 'UTF-8')->humanize();
 
         // check whether we are dealing with directory or file
         // file path to check differs as does the type check
@@ -252,6 +256,9 @@ abstract class View
 
                 // current menu item
                 $menuItem['active'] = true;
+
+                // set the page title
+                $this->vars['pageTitle'] = $menuItem['label'];
 
             } elseif (\Stringy\Stringy::create($this->docmark->url, 'UTF-8')->startsWith($menuItem['link'])) {
 
@@ -309,8 +316,8 @@ abstract class View
         // set the home item
         $breadcrumb = array(
             array(
-                'label' => $this->docmark->config['breadcrumb']['homeLabel'],
-                'link' => $this->docmark->config['breadcrumb']['homeLink']
+                'label' => $this->docmark->config['homeLabel'],
+                'link' => $this->docmark->config['homeLink']
             )
         );
 

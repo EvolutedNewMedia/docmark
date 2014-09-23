@@ -35,17 +35,17 @@ $config = array(
         'cacheRoot' => 'cache/'
     ),
 
-    'breadcrumb' => array(
-        /**
-         * set the label for breadcrumb home
-         */
-        'homeLabel' => 'Home',
+    /**
+     * set the label for home
+     */
+    'homeLabel' => 'WHSuite Documentation',
 
-        /**
-         * set the home url
-         */
-        'homeLink' => '/'
-    )
+    /**
+     * set the home url
+     */
+    'homeLink' => '/'
+
+
 
 
 
