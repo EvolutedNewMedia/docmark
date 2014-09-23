@@ -90,7 +90,7 @@ class DocMark
 
         if (isset($query['0']) && ! empty($query['0'])) {
 
-            $this->url = $query['0'];
+            $this->url = $query['0'] = rtrim($query['0'], '/');
             $query['0'] = ltrim($query['0'], '/');
             $queryBits = explode('/', $query['0']);
 

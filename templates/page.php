@@ -1,4 +1,4 @@
-<?php echo $helper->includeTemplate('header.php', array('siteTitle' => $site['title'], 'pageTitle' => $pageTitle)); ?>
+<?php echo $helper->includeTemplate('header.php'); ?>
 
     <?php /*if ($params['repo']) { ?>
         <a href="https://github.com/<?php echo $params['repo']; ?>" target="_blank" id="github-ribbon" class="hidden-print"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
@@ -23,7 +23,7 @@
                 </div>
                 <div id="sub-nav-collapse" class="sub-nav-collapse">
                     <!-- Navigation -->
-                    <?php echo $helper->includeTemplate('menu.php', array('menu' => $menu, 'helper' => $helper)); ?>
+                    <?php echo $helper->includeTemplate('menu.php'); ?>
 
                     <?php //if (!empty($params['links']) || !empty($params['twitter'])) { ?>
                         <div class="well well-sidebar">
@@ -54,7 +54,7 @@
             <div class="right-column content-area col-sm-9">
                 <div class="content-page">
 
-                    <?php echo $helper->includeTemplate('breadcrumb.php', array('breadcrumb' => $breadcrumb)); ?>
+                    <?php echo $helper->includeTemplate('breadcrumb.php'); ?>
 
                     <article>
                         <div class="page-header">

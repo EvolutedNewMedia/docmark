@@ -16,6 +16,12 @@ namespace DocMark\System;
 
 class ViewHelper
 {
+    /**
+     * hold all the variables we assign to the templates
+     * new ones will override old data
+     */
+    protected $variables = array();
+
 
     /**
      * include another element template
@@ -45,8 +51,10 @@ class ViewHelper
      */
     public function processTemplate($template, $variables)
     {
+        $this->variables = array_merge($this->variables, $variables);
+
         // extract the variables
-        extract($variables);
+        extract($this->variables);
 
         // we're just fetching the contents, get and eval them so we can return the output
         $tpl = file_get_contents($template);
