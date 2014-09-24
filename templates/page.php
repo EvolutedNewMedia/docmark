@@ -1,8 +1,5 @@
 <?php echo $helper->includeTemplate('header.php'); ?>
 
-    <?php /*if ($params['repo']) { ?>
-        <a href="https://github.com/<?php echo $params['repo']; ?>" target="_blank" id="github-ribbon" class="hidden-print"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
-    <?php }*/ ?>
     <div class="container-fluid fluid-height wrapper">
         <div class="navbar navbar-fixed-top hidden-print">
             <div class="container-fluid">
@@ -25,30 +22,16 @@
                     <!-- Navigation -->
                     <?php echo $helper->includeTemplate('menu.php'); ?>
 
-                    <?php //if (!empty($params['links']) || !empty($params['twitter'])) { ?>
-                        <div class="well well-sidebar">
+                    <div class="well well-sidebar">
 
-                            <!-- Links -->
-                            <?php /* foreach ($params['links'] as $name => $url) echo '<a href="' . $url . '" target="_blank">' . $name . '</a><br>'; ?>
-                            <?php if ($params['toggle_code']) echo '<a href="#" id="toggleCodeBlockBtn" onclick="toggleCodeBlocks();">Show Code Blocks Inline</a><br>'; ?>
-
-                            <!-- Twitter -->
-                            <?php foreach ($params['twitter'] as $handle) { ?>
-                                <div class="twitter">
-                                    <hr/>
-                                    <iframe allowtransparency="true" frameborder="0" scrolling="no" style="width:115px; height:20px;" src="https://platform.twitter.com/widgets/follow_button.html?screen_name=<?php echo $handle;?>&amp;show_count=false"></iframe>
-                                </div>
-                            <?php } */ ?>
-
-                                <div class="copyright">
-                                    Copyright &copy; Turn 24 Ltd <?php echo date('Y'); ?>.
-                                </div>
-
-                                <div class="poweredby">
-                                Built with DocMark
-                                </div>
+                        <div class="copyright">
+                            Copyright &copy; Turn 24 Ltd <?php echo date('Y'); ?>.
                         </div>
-                    <?php //} ?>
+
+                        <div class="poweredby">
+                        Built with DocMark
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="right-column content-area col-sm-9">

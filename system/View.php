@@ -163,7 +163,7 @@ abstract class View
      * @param   bool    top level menu loop
      * @return  array   array of menu items
      */
-    protected function processMenuDirectory($finder, $urlPath, $topLevel = false)
+    protected function processMenuDirectory($finder, $urlPathOrig, $topLevel = false)
     {
         $menu = array();
 
@@ -177,6 +177,7 @@ abstract class View
             }
 
             // reset the urlPath if it's the top level
+            $urlPath = $urlPathOrig;
             if ($topLevel) {
                 $urlPath = str_replace($urlPath, '', $item->getPath());
             }
@@ -197,6 +198,7 @@ abstract class View
             }
 
             // reset the urlPath if it's the top level
+            $urlPath = $urlPathOrig;
             if ($topLevel) {
                 $urlPath = str_replace($urlPath, '', $item->getPath());
             }

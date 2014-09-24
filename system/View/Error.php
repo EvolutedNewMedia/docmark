@@ -56,6 +56,7 @@ class Error extends \DocMark\System\View
             // generate all the data
             $this->generateMenu();
         }
+        $this->vars['pageTitle'] = 'Page not found';
 
         // process the template
         $output = $this->generateOutput();
