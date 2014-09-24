@@ -29,6 +29,22 @@ $config = array(
     'indexTitle' => 'Welcome',
 
     /**
+     * ignore list for the menus
+     * these are current global across the whole docs folder
+     */
+    'ignore' => array(
+        'folders' => array(
+
+        ),
+        'files' => array(
+            'index.md',
+            'empty',
+            'LICENSE',
+            'README.md'
+        )
+    ),
+
+    /**
      * Documentation Root (Relative to root)
      */
     'docRoot' => 'docs/',

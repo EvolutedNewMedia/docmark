@@ -170,6 +170,12 @@ abstract class View
        // loop the directories
         foreach ($finder->directories() as $item) {
 
+            // check for ignores
+            if (in_array($item->getBasename(), $this->docmark->config['ignore']['folders'])) {
+
+                continue;
+            }
+
             // reset the urlPath if it's the top level
             if ($topLevel) {
                 $urlPath = str_replace($urlPath, '', $item->getPath());
@@ -183,6 +189,12 @@ abstract class View
         }
 
         foreach ($finder->files() as $item) {
+
+            // check for ignores
+            if (in_array($item->getBasename(), $this->docmark->config['ignore']['files'])) {
+
+                continue;
+            }
 
             // reset the urlPath if it's the top level
             if ($topLevel) {

@@ -21,7 +21,7 @@
                 endif;
             ?>
             <li class="<?php echo $class; ?>">
-                <a href="<?php echo $item['link']; ?>">
+                <a href="<?php echo (isset($item['link'])) ? $item['link'] : ''; ?>">
                     <?php echo $item['label']; ?>
                 </a>
 
