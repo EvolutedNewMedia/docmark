@@ -16,14 +16,6 @@ namespace DocMark\System\View;
 class Home extends \DocMark\System\View\Page
 {
     /**
-     * the template this view will load
-     * set on child view classes
-     *
-     * @access public
-     */
-    public $template = 'home.php';
-
-    /**
      * take the template and the variables and generate the page
      *
      * @return  string      HTML page to output
