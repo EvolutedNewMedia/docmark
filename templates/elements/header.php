@@ -7,7 +7,7 @@
         <title><?php echo $pageTitle . ' :: ' . $site['title']; ?></title>
         <meta name="description" content="<?php echo $pageTitle . ' :: ' . $site['title']; ?>" />
         <meta name="author" content="WHSuite">
-        <link rel="icon" href="/assets/img/favicon-blue.png" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <!-- Mobile -->
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
