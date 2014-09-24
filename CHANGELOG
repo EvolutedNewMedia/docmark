@@ -1,0 +1,18 @@
+0.1.2 - 24/09/2014
+==================
+
+Added changelog
+
+
+0.1.1 - 24/09/2014
+==================
+
+Swapped out Favicon
+Fixed bug when multiple pages share same phrase.
+
+
+0.1.0 - 24/09/2014
+==================
+
+Initial release with support for on the fly generation.
+Menu / Breadcrumb generation should also be setup
