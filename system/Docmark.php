@@ -137,7 +137,7 @@ class DocMark
 
             // set the directory
             $finder = new Finder();
-            $dirList = $finder->in($path)->name('*' . $bitName . '*');
+            $dirList = $finder->in($path)->depth('==0')->name('*' . $bitName . '*');
 
             if ($dirList->count() > 0) {
 
