@@ -1,0 +1,23 @@
+{
+    "name": "turn24/documenter",
+    "description": "Documentation generator, converts markdown files to fully functional html documentation website. Based off daux.io",
+    "license": "MIT",
+    "version": "0.1.0",
+    "authors": [
+        {
+            "name": "Mike Barlow",
+            "email": "mike@turn24.com"
+        },
+        {
+            "name": "Ricky Mills",
+            "email": "rick@turn24.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "danielstjules/stringy": "dev-master",
+        "symfony/http-foundation": "2.6.*@dev",
+        "symfony/finder": "2.6.*@dev",
+        "michelf/php-markdown": "1.4.*"
+    }
+}
