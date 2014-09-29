@@ -61,7 +61,7 @@ class DocMark
      */
     protected function loadConfig()
     {
-        $path = ROOT . 'system' . DS . 'Config.php';
+        $path = ROOT . 'System' . DS . 'Config.php';
 
         if (file_exists($path) && is_readable($path)) {
 

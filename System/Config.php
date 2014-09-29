@@ -21,7 +21,7 @@ $config = array(
     /**
      * set the home url
      */
-    'siteLink' => 'http://docmark.dev/',
+    'siteLink' => 'http://docs.whsuite.com/',
 
     /**
      * set the title for the main index page
