@@ -51,9 +51,9 @@ define(
 // -------------------------------------------------------------------
 // Set the system autoloader
 // -------------------------------------------------------------------
-if (file_exists('system' . DS . 'Psr4AutoloaderClass.php')) {
+if (file_exists('System' . DS . 'Psr4AutoloaderClass.php')) {
 
-    require_once('system' . DS . 'Psr4AutoloaderClass.php');
+    require_once('System' . DS . 'Psr4AutoloaderClass.php');
 } else {
 
     die("Fatal Error: System autoload file not found!");
