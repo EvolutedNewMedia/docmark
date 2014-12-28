@@ -10,7 +10,7 @@ DocMark is a markdown to html documentation (or standard site) generator. DocMar
 
 ## Installation
 
-After checking out DocMark from Git, navigate to the root of the project and run a composer install to install all the depencies.
+After checking out DocMark from Git, navigate to the root of the project and run a composer install to install all the dependencies.
 
 You will also want to edit some of the site title / link values found in the config file at `DocMarkRoot/System/Config.php`
 
@@ -24,7 +24,7 @@ The contents of each of the template files is simple HTML mixed with PHP to popu
 
 ## Documenting
 
-Creating your documentation is as simple as creating files within the `/docs/` folder (default value, this however can be changed).  
+Creating your documentation is as simple as creating files within the `/docs/` folder (default value, this however can be changed).
 All files must be created with a `.md` file extension, full markdown documentation can be found [here](https://daringfireball.net/projects/markdown/).
 
 Each folder **must** have an `index.md` to act as a landing page for that directory. Any other files within that folder will appear in the menu as normal.
