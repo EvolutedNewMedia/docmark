@@ -106,6 +106,11 @@ class DocMark
         // set the template engine and set fallback theme
         $templates = new \League\Plates\Engine(ROOT . 'themes' . DS . 'fallback');
 
+        // set the path to the assets to run through plates
+        $templates->loadExtension(
+            new \League\Plates\Extension\Asset(ROOT, true)
+        );
+
         // set the defined user theme
         if (
             file_exists(ROOT . 'themes' . DS . $this->config['themeName']) &&
