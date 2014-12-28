@@ -23,7 +23,7 @@ class Page extends \DocMark\System\View
      *
      * @access public
      */
-    public $template = 'page.php';
+    public $template = 'page';
 
     /**
      * display the page

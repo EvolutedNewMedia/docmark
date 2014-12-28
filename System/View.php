@@ -40,18 +40,11 @@ abstract class View
     protected $view = null;
 
     /**
-     * variables for the template
+     * the template engine
      *
      * @access protected
      */
-    protected $vars = array();
-
-    /**
-     * instance of the ViewHelper
-     *
-     * @access public
-     */
-    public $helper = null;
+    protected $templates = null;
 
     /**
      * display method to determine how each page template should
@@ -63,23 +56,25 @@ abstract class View
      * constructor, set the file we are loading
      *
      * @param object        Copy of the DocMark object
+     * @param object        Copy of the Plates Template Engine
      * @param string        The file to load
-     * @param null|string   Copy of the html page to output (optional)
      */
-    public function __construct($docmark, $view, $page = null)
+    public function __construct($docmark, $templates, $view)
     {
         $this->docmark = $docmark;
+        $this->templates = $templates;
         $this->view = $view;
-        $this->helper = new \DocMark\System\ViewHelper;
-        $this->vars['site'] = array(
-            'title' => $this->docmark->config['siteTitle'],
-            'link' => $this->docmark->config['siteLink']
+
+        // setup some default data variables
+        $this->templates->addData(
+            array(
+                'site' => array(
+                    'title' => $this->docmark->config['siteTitle'],
+                    'link' => $this->docmark->config['siteLink']
+                ),
+                'theme' => $this->docmark->config['themeName']
+            )
         );
-
-        if (! empty($page)) {
-
-            $this->vars['page'] = $page;
-        }
     }
 
     /**
@@ -89,16 +84,19 @@ abstract class View
      */
     public function generateOutput()
     {
-        $this->vars['helper'] = $this->helper;
-        $template = ROOT . 'templates' . DS . $this->template;
+        $template = $this->docmark->config['themeName'] . '::' .$this->template;
 
-        if (file_exists($template)) {
+        try {
 
-            return $this->helper->processTemplate(
-                $template,
-                $this->vars
-            );
-        } else {
+            if ($this->templates->exists($template)) {
+
+                return $this->templates->render($template);
+            } else {
+
+                $this->showError();
+            }
+
+        } catch (\Exception $e) {
 
             $this->showError();
         }
@@ -114,7 +112,12 @@ abstract class View
     {
         $contents = file_get_contents($this->view);
         $page = \Michelf\MarkdownExtra::defaultTransform($contents);
-        $this->vars['page'] = $page;
+
+        $this->templates->addData(
+            array(
+                'page' => $page
+            )
+        );
 
         if ($return) {
 
@@ -144,10 +147,15 @@ abstract class View
         $menu = array();
 
         // loop docs
-        $finder->in($docRoot)->depth('==0');
+        $finder->in($docRoot)->depth('==0')->sortByName();
 
         $menu = $this->processMenuDirectory($finder, $docRoot, true);
-        $this->vars['menu'] = $menu;
+
+        $this->templates->addData(
+            array(
+                'menu' => $menu
+            )
+        );
 
         if ($return) {
 
@@ -272,7 +280,11 @@ abstract class View
                 $menuItem['active'] = true;
 
                 // set the page title
-                $this->vars['pageTitle'] = $menuItem['label'];
+                $this->templates->addData(
+                    array(
+                        'pageTitle' => $menuItem['label']
+                    )
+                );
 
             } elseif (\Stringy\Stringy::create($this->docmark->url, 'UTF-8')->startsWith($menuItem['link'])) {
 
@@ -304,7 +316,7 @@ abstract class View
         $finder = new Finder();
 
         // loop docs
-        $finder->in($dirPath)->depth('==0');
+        $finder->in($dirPath)->depth('==0')->sortByName();
 
         $menu = $this->processMenuDirectory($finder, $urlPath);
 
@@ -324,7 +336,8 @@ abstract class View
     {
         if (empty($menu)) {
 
-            $menu = $this->vars['menu'];
+            $vars = $this->templates->getData();
+            $menu = $vars['menu'];
         }
 
         // set the home item
@@ -362,7 +375,11 @@ abstract class View
             }
         }
 
-        $this->vars['breadcrumb'] = $breadcrumb;
+        $this->templates->addData(
+            array(
+                'breadcrumb' => $breadcrumb
+            )
+        );
 
         if ($return) {
 
@@ -414,7 +431,7 @@ abstract class View
      */
     public function showError()
     {
-        $view = new \DocMark\System\View\Error($this->docmark, false);
+        $view = new \DocMark\System\View\Error($this->docmark, $this->templates, false);
 
         $view->systemError = true;
         $view->display();

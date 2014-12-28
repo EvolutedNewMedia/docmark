@@ -5,9 +5,9 @@
         <?php foreach ($breadcrumb as $key => $item): ?>
             <li>
                 <?php if ($key < $count): ?>
-                    <a href="<?php echo $item['link']; ?>">
+                    <a href="<?=$this->e($item['link'])?>">
                 <?php endif; ?>
-                    <?php echo $item['label']; ?>
+                    <?=$this->e($item['label'])?>
 
                 <?php if ($key < $count): ?>
                     </a>

@@ -103,17 +103,33 @@ class DocMark
 
         $path = $this->findFile($queryBits, $docRoot);
 
+        // set the template engine and set fallback theme
+        $templates = new \League\Plates\Engine(ROOT . 'themes' . DS . 'fallback');
+
+        // set the defined user theme
+        if (
+            file_exists(ROOT . 'themes' . DS . $this->config['themeName']) &&
+            is_dir(ROOT . 'themes' . DS . $this->config['themeName'])
+        ) {
+
+            $templates->addFolder(
+                $this->config['themeName'],
+                ROOT . 'themes' . DS . $this->config['themeName'],
+                true
+            );
+        }
+
         if ($path !== false && isset($isHome) && $isHome) {
 
-            return new \DocMark\System\View\Home($this, $path);
+            return new \DocMark\System\View\Home($this, $templates, $path);
 
         } elseif ($path !== false && (! isset($isHome) || $isHome === false)) {
 
-            return new \DocMark\System\View\Page($this, $path);
+            return new \DocMark\System\View\Page($this, $templates, $path);
 
         } else {
 
-            return new \DocMark\System\View\Error($this, $path);
+            return new \DocMark\System\View\Error($this, $templates, $path);
         }
     }
 
