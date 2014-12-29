@@ -14,14 +14,19 @@
 $config = array(
 
     /**
+     * set the theme to use
+     */
+    'themeName' => 'default',
+
+    /**
      * set the label for home
      */
-    'siteTitle' => 'WHSuite Documentation',
+    'siteTitle' => 'DocMark Documentation',
 
     /**
      * set the home url
      */
-    'siteLink' => 'http://docs.whsuite.com/',
+    'siteLink' => 'http:/docmark.com/',
 
     /**
      * set the title for the main index page

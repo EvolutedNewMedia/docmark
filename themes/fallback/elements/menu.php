@@ -20,13 +20,20 @@
                     $class = 'active';
                 endif;
             ?>
-            <li class="<?php echo $class; ?>">
+            <li class="<?=$class?>">
                 <a href="<?php echo (isset($item['link'])) ? $item['link'] : ''; ?>">
-                    <?php echo $item['label']; ?>
+                    <?=$this->e($item['label'])?>
                 </a>
 
                 <?php if (isset($item['children']) && ! empty($item['children'])): ?>
-                    <?php echo $helper->includeTemplate('menuChildren.php', array('children' => $item['children'], 'helper' => $helper)); ?>
+                    <?php
+                        $this->insert(
+                            $theme . '::elements/menuChildren',
+                            array(
+                                'children' => $item['children']
+                            )
+                        );
+                    ?>
                 <?php endif; ?>
             </li>
         <?php endforeach; ?>

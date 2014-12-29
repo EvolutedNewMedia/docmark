@@ -22,7 +22,11 @@ class Home extends \DocMark\System\View\Page
      */
     public function generateOutput()
     {
-        $this->vars['pageTitle'] = $this->docmark->config['indexTitle'];
+        $this->templates->addData(
+            array(
+                'pageTitle' => $this->docmark->config['indexTitle']
+            )
+        );
 
         return parent::generateOutput();
     }
