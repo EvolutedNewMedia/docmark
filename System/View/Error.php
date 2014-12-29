@@ -23,7 +23,7 @@ class Error extends \DocMark\System\View
      *
      * @access public
      */
-    public $template = 'error.php';
+    public $template = 'error';
 
     /**
      * fatal system error. Used by the showError() method
@@ -39,7 +39,7 @@ class Error extends \DocMark\System\View
      *
      * @access public
      */
-    public $systemErrorTemplate = 'systemError.php';
+    public $systemErrorTemplate = 'systemError';
 
     /**
      * display the page
@@ -56,7 +56,12 @@ class Error extends \DocMark\System\View
             // generate all the data
             $this->generateMenu();
         }
-        $this->vars['pageTitle'] = 'Page not found';
+
+        $this->templates->addData(
+            array(
+                'pageTitle' => 'Page not found'
+            )
+        );
 
         // process the template
         $output = $this->generateOutput();

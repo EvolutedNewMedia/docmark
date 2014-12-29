@@ -2,7 +2,6 @@ TODO
 ====
 
 Better way of doing the site titles / meta data
-Helper functions to streamline header / footer
 Tidier way to do menu templates (duplicated code)
 
 Caching (half way between on the fly and the static pages)
