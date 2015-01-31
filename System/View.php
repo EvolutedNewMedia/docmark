@@ -47,6 +47,13 @@ abstract class View
     protected $templates = null;
 
     /**
+     * the markdown converter
+     *
+     * @access protected
+     */
+    protected $converter = null;
+
+    /**
      * display method to determine how each page template should
      * handle the data / it's templates
      */
@@ -56,12 +63,14 @@ abstract class View
      * constructor, set the file we are loading
      *
      * @param object        Copy of the DocMark object
+     * @param object        Copy of the Markdown Converter object
      * @param object        Copy of the Plates Template Engine
      * @param string        The file to load
      */
-    public function __construct($docmark, $templates, $view)
+    public function __construct($docmark, $converter, $templates, $view)
     {
         $this->docmark = $docmark;
+        $this->converter = $converter;
         $this->templates = $templates;
         $this->view = $view;
 
@@ -111,8 +120,7 @@ abstract class View
     public function generatePage($return = false)
     {
         $contents = file_get_contents($this->view);
-        $page = \Michelf\MarkdownExtra::defaultTransform($contents);
-
+        $page = $this->converter->convertToHtml($contents);
         $this->templates->addData(
             array(
                 'page' => $page
