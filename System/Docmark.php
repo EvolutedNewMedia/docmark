@@ -124,17 +124,20 @@ class DocMark
             );
         }
 
+        // load the converter
+        $converter = new \League\CommonMark\CommonMarkConverter();
+
         if ($path !== false && isset($isHome) && $isHome) {
 
-            return new \DocMark\System\View\Home($this, $templates, $path);
+            return new \DocMark\System\View\Home($this, $converter, $templates, $path);
 
         } elseif ($path !== false && (! isset($isHome) || $isHome === false)) {
 
-            return new \DocMark\System\View\Page($this, $templates, $path);
+            return new \DocMark\System\View\Page($this, $converter, $templates, $path);
 
         } else {
 
-            return new \DocMark\System\View\Error($this, $templates, $path);
+            return new \DocMark\System\View\Error($this, $converter, $templates, $path);
         }
     }
 

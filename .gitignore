@@ -5,4 +5,4 @@ composer.phar
 vendor/
 
 # System Ignores
-docs/
+docs/*
