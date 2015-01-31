@@ -85,8 +85,6 @@
         <script src="<?=$this->asset('/assets/js/highlight.min.js')?>"></script>
         <script>hljs.initHighlightingOnLoad();</script>
 
-        <!-- Front end file editor -->
-        <script src="<?=$this->asset('/assets/js/custom.js')?>"></script>
         <!--[if lt IE 9]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->

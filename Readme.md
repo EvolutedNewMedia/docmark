@@ -5,7 +5,7 @@ DocMark is a markdown to html documentation (or standard site) generator. DocMar
 ## Requirements
 
 * Apache
-* PHP 5.3+
+* PHP 5.3.3+
 * Composer
 
 ## Installation

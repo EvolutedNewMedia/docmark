@@ -439,7 +439,7 @@ abstract class View
      */
     public function showError()
     {
-        $view = new \DocMark\System\View\Error($this->docmark, $this->templates, false);
+        $view = new \DocMark\System\View\Error($this->docmark, $this->converter, $this->templates, false);
 
         $view->systemError = true;
         $view->display();
