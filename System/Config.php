@@ -54,6 +54,14 @@ $config = array(
      */
     'docRoot' => 'docs/',
 
+    /**
+     * URL to the repo containing your docs, for use with post commit hooks
+     * to auto update your documentation.
+     * n.b. If authorisation is needed, include these details within the repo URL.
+     */
+    'docRepo' => 'https://github.com/WHSuite/docs.git',
+
+
     'cache' => array( // TODO: Coming in later version
         /**
          * Enable caching. Half way house between on fly and static generation
@@ -70,7 +78,5 @@ $config = array(
          */
         'cacheRoot' => 'cache/'
     )
-
-
 
 );
