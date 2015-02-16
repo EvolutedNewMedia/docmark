@@ -27,7 +27,7 @@ class Updater extends \Robo\Tasks
      *
      * @param   object  Docmark Object
      */
-    public function addDocmark(\Docmark\System\Docmark $docmark)
+    public function addDocmark(\DocMark\System\Docmark $docmark)
     {
         $this->docmark = $docmark;
     }
@@ -37,25 +37,48 @@ class Updater extends \Robo\Tasks
      */
     public function updateFromGithub()
     {
-        $git = $this->taskGitStack()
-            ->stopOnFail();
-
         // check if we have a git repo already
-        if (file_exists(STORAGE_ROOT . 'github') && is_dir(STORAGE_ROOT . 'github')) {
+        if (
+            ! file_exists(STORAGE_ROOT . 'github') ||
+            ! is_dir(STORAGE_ROOT . 'github')
+        ) {
 
-            $git->dir(STORAGE_ROOT . 'github')
-                ->pull('origin', $this->docmark->config['docRepoBranch']);
-
-        } else {
-
-            $git->dir(STORAGE_ROOT)
+            $this->taskGitStack()
+                ->stopOnFail()
+                ->dir(STORAGE_ROOT)
                 ->cloneRepo($this->docmark->config['docRepo'], 'github')
-                ->exec('cd github')
-                ->checkout($this->docmark->config['docRepoBranch']);
+                ->run();
         }
 
-        $git->run();
+        $this->taskGitStack()
+            ->stopOnFail()
+            ->dir(STORAGE_ROOT . 'github')
+            ->checkout($this->docmark->config['docRepoBranch'])
+            ->pull('origin', $this->docmark->config['docRepoBranch'])
+            ->run();
+
+
+        $this->moveFiles('github');
     }
 
+
+    /**
+     * move the updated files from source to the docroot specified in config
+     *
+     * @param   string      source folder in storage
+     */
+    protected function moveFiles($source)
+    {
+        if (
+            empty($source) ||
+            ! file_exists(STORAGE_ROOT . 'github') ||
+            ! is_dir(STORAGE_ROOT . 'github')
+        ) {
+
+            return false;
+        }
+
+
+    }
 
 }
