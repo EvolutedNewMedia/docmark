@@ -8,7 +8,7 @@
  * @copyright  Copyright (c), Turn 24 Ltd.
  * @license MIT
  * @link http://github.com/Turn24/DocMark
- * @since  Version 0.1.0
+ * @since  Version 0.3.0
  */
 
 if (! defined('DS')) {
@@ -20,15 +20,6 @@ if (! defined('DS')) {
 // -------------------------------------------------------------------
 require_once('System' . DS . 'Init.php');
 
-// -------------------------------------------------------------------
-// Start DocMark
-// -------------------------------------------------------------------
+$Updater = new \Docmark\System\Updater;
 
-$docmark = new \DocMark\System\Docmark();
-
-// process the request
-// will return a view object
-$view = $docmark->process();
-
-// Display the page to the user
-$view->display();
+$Updater->updateFromGithub();
