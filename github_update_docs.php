@@ -20,6 +20,7 @@ if (! defined('DS')) {
 // -------------------------------------------------------------------
 require_once('System' . DS . 'Init.php');
 
-$Updater = new \Docmark\System\Updater;
+$Updater = new \DocMark\System\Updater;
+$Updater->addDocmark($docmark);
 
 $Updater->updateFromGithub();

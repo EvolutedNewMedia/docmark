@@ -46,7 +46,15 @@ define(
     \Stringy\Stringy::create(
         dirname(__DIR__),
         'UTF-8'
-    )->ensureRight('/')
+    )->ensureRight(DS)
+);
+
+// -------------------------------------------------------------------
+// Set the storage directory (used for auto-updating docs)
+// -------------------------------------------------------------------
+define(
+    'STORAGE_ROOT',
+    ROOT . 'Storage' . DS
 );
 
 // -------------------------------------------------------------------
@@ -63,3 +71,9 @@ if (file_exists(ROOT . 'System' . DS . 'Psr4AutoloaderClass.php')) {
 $loader = new Psr4AutoloaderClass;
 $loader->register();
 $loader->addNamespace('DocMark', dirname(__DIR__));
+
+// -------------------------------------------------------------------
+// Start DocMark
+// -------------------------------------------------------------------
+
+$docmark = new \DocMark\System\Docmark();

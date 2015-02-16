@@ -50,6 +50,9 @@ $config = array(
     ),
 
     /**
+     * TODO: Move these doc related configs into sub array for tidyness
+     */
+    /**
      * Documentation Root (Relative to root)
      */
     'docRoot' => 'docs/',
@@ -61,6 +64,10 @@ $config = array(
      */
     'docRepo' => 'https://github.com/WHSuite/docs.git',
 
+    /**
+     * The branch to pull from
+     */
+    'docRepoBranch' => 'master',
 
     'cache' => array( // TODO: Coming in later version
         /**

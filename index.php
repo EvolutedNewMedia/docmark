@@ -21,10 +21,8 @@ if (! defined('DS')) {
 require_once('System' . DS . 'Init.php');
 
 // -------------------------------------------------------------------
-// Start DocMark
+// Run DocMark
 // -------------------------------------------------------------------
-
-$docmark = new \DocMark\System\Docmark();
 
 // process the request
 // will return a view object
