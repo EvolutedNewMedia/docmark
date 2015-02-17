@@ -32,6 +32,53 @@ class Updater extends \Robo\Tasks
         $this->docmark = $docmark;
     }
 
+
+    /**
+     * move the updated files from source to the docroot specified in config
+     *
+     * @param   string      source folder in storage
+     */
+    protected function moveFiles($source)
+    {
+        if (
+            empty($source) ||
+            ! file_exists(STORAGE_ROOT . $source) ||
+            ! is_dir(STORAGE_ROOT . $source)
+        ) {
+
+            return false;
+        }
+
+        $this->taskCopyDir([
+            STORAGE_ROOT . $source => ROOT . $this->docmark->config['docRoot']
+        ])->run();
+    }
+
+
+    /**
+     * check if it' a valid github push
+     *
+     * @todo    Add in checks for X-Hub-Signature
+     * @param   object  The Object sent from github
+     * @return  bool
+     */
+    public function checkGithub($data)
+    {
+        // get the repo name
+        list($url, $repoName) = explode('github.com/', $this->docmark->config['docRepo']);
+        $repoName = str_replace('.git', '', $repoName);
+
+        if (
+            $this->docmark->request->headers->get('x-github-event') === 'push' &&
+            strtolower($repoName) === strtolower($data->repository->full_name)
+        ) {
+
+            return true;
+        }
+
+        return false;
+    }
+
     /**
      * check for a post push message from github and try to update our files
      */
@@ -59,28 +106,6 @@ class Updater extends \Robo\Tasks
 
 
         $this->moveFiles('github');
-    }
-
-
-    /**
-     * move the updated files from source to the docroot specified in config
-     *
-     * @param   string      source folder in storage
-     */
-    protected function moveFiles($source)
-    {
-        if (
-            empty($source) ||
-            ! file_exists(STORAGE_ROOT . $source) ||
-            ! is_dir(STORAGE_ROOT . $source)
-        ) {
-
-            return false;
-        }
-
-        $this->taskCopyDir([
-            STORAGE_ROOT . $source => ROOT . $this->docmark->config['docRoot']
-        ])->run();
     }
 
 }

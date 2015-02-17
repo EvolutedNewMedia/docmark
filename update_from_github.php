@@ -23,4 +23,20 @@ require_once('System' . DS . 'Init.php');
 $Updater = new \DocMark\System\Updater;
 $Updater->addDocmark($docmark);
 
-$Updater->updateFromGithub();
+$debug = print_r($docmark->request, true);
+
+file_put_contents(STORAGE_ROOT . 'request-' . time() . '.log', $debug);
+
+if (php_sapi_name() === 'cli') {
+
+    $data = file_get_contents('php://stdin');
+} else {
+
+    $data = file_get_contents('php://input');
+}
+
+file_put_contents(STORAGE_ROOT . 'webhook-' . time() . '.log', print_r(json_decode($data), true));
+if ($Updater->checkGithub($data)) {
+
+    $Updater->updateFromGithub();
+}
