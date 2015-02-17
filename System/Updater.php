@@ -71,14 +71,16 @@ class Updater extends \Robo\Tasks
     {
         if (
             empty($source) ||
-            ! file_exists(STORAGE_ROOT . 'github') ||
-            ! is_dir(STORAGE_ROOT . 'github')
+            ! file_exists(STORAGE_ROOT . $source) ||
+            ! is_dir(STORAGE_ROOT . $source)
         ) {
 
             return false;
         }
 
-
+        $this->taskCopyDir([
+            STORAGE_ROOT . $source => ROOT . $this->docmark->config['docRoot']
+        ])->run();
     }
 
 }
