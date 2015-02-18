@@ -68,9 +68,12 @@ class Updater extends \Robo\Tasks
         list($url, $repoName) = explode('github.com/', $this->docmark->config['docRepo']);
         $repoName = str_replace('.git', '', $repoName);
 
+        // decode the json from github
+        $data = json_decode($data);
+
         if (
             $this->docmark->request->headers->get('x-github-event') === 'push' &&
-            strtolower($repoName) === strtolower($data->repository->full_name)
+            strtolower(trim($repoName)) === strtolower(trim($data->repository->full_name))
         ) {
 
             return true;
