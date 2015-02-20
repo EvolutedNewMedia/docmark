@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fdabd7f0174145f21d12c61d11e73053",
+    "hash": "8ca4fb1f573b82ba0ef67a05c5b12cab",
     "packages": [
         {
             "name": "codegyre/robo",
@@ -178,12 +178,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "a0869b541c85244c543e52340bc237ef2d4eeeda"
+                "reference": "962e2ddaae13dcf1a2a6493ccf2e4ec3d72123df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/a0869b541c85244c543e52340bc237ef2d4eeeda",
-                "reference": "a0869b541c85244c543e52340bc237ef2d4eeeda",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/962e2ddaae13dcf1a2a6493ccf2e4ec3d72123df",
+                "reference": "962e2ddaae13dcf1a2a6493ccf2e4ec3d72123df",
                 "shasum": ""
             },
             "require": {
@@ -202,7 +202,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.6-dev"
+                    "dev-master": "0.7-dev"
                 }
             },
             "autoload": {
@@ -229,7 +229,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2015-02-16 16:06:49"
+            "time": "2015-02-18 14:46:36"
         },
         {
             "name": "league/plates",
