@@ -8,7 +8,7 @@
  * @copyright  Copyright (c), Turn 24 Ltd.
  * @license MIT
  * @link http://github.com/Turn24/DocMark
- * @since  Version 0.1.0
+ * @since  Version 0.3.0
  */
 
 if (! defined('DS')) {
@@ -20,13 +20,22 @@ if (! defined('DS')) {
 // -------------------------------------------------------------------
 require_once('System' . DS . 'Init.php');
 
-// -------------------------------------------------------------------
-// Run DocMark
-// -------------------------------------------------------------------
+$Updater = new \DocMark\System\Updater;
+$Updater->addDocmark($docmark);
 
-// process the request
-// will return a view object
-$view = $docmark->process();
+$debug = print_r($docmark->request, true);
 
-// Display the page to the user
-$view->display();
+file_put_contents(STORAGE_ROOT . 'request-' . time() . '.log', $debug);
+
+if (php_sapi_name() === 'cli') {
+
+    $data = file_get_contents('php://stdin');
+} else {
+
+    $data = file_get_contents('php://input');
+}
+
+if ($Updater->checkGithub($data)) {
+
+    $Updater->updateFromGithub();
+}

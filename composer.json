@@ -1,8 +1,8 @@
 {
     "name": "turn24/docmark",
-    "description": "Documentation generator, converts markdown files to fully functional html documentation website. Based off daux.io",
+    "description": "Documentation generator, converts markdown files to a fully functional html website.",
     "license": "MIT",
-    "version": "0.1.0",
+    "version": "0.3.0",
     "authors": [
         {
             "name": "Mike Barlow",
@@ -19,6 +19,7 @@
         "symfony/http-foundation": "2.6.*",
         "symfony/finder": "2.6.*",
         "league/commonmark": "0.*",
-        "league/plates": "3.*"
+        "league/plates": "3.*",
+        "codegyre/robo": "0.5.*"
     }
 }
