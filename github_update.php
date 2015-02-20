@@ -25,6 +25,8 @@ $Updater->addDocmark($docmark);
 
 $debug = print_r($docmark->request, true);
 
+file_put_contents(STORAGE_ROOT . 'request-' . time() . '.log', $debug);
+
 if (php_sapi_name() === 'cli') {
 
     $data = file_get_contents('php://stdin');
