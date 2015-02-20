@@ -1,3 +1,9 @@
+0.3.0 - TBA
+==================
+
+Added github webhook to update docs upon pushing to the correct git branch
+
+
 0.2.1 - 31/01/2014
 ==================
 
