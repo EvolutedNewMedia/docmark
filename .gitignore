@@ -6,3 +6,4 @@ vendor/
 
 # System Ignores
 docs/*
+Storage/*

@@ -26,7 +26,7 @@ $config = array(
     /**
      * set the home url
      */
-    'siteLink' => 'http:/docmark.com/',
+    'siteLink' => 'http:/doc-mark.com/',
 
     /**
      * set the title for the main index page
@@ -49,10 +49,24 @@ $config = array(
         )
     ),
 
-    /**
-     * Documentation Root (Relative to root)
-     */
-    'docRoot' => 'docs/',
+    'docs' => array(
+        /**
+         * Documentation Root (Relative to root)
+         */
+        'root' => 'docs/'
+
+        /**
+         * URL to the repo containing your docs, for use with post commit hooks
+         * to auto update your documentation.
+         * n.b. If authorisation is needed, include these details within the repo URL.
+         */
+        'repo' => '',
+
+        /**
+         * The branch to pull from
+         */
+        'repoBranch' => 'master'
+    ),
 
     'cache' => array( // TODO: Coming in later version
         /**
@@ -70,7 +84,5 @@ $config = array(
          */
         'cacheRoot' => 'cache/'
     )
-
-
 
 );
