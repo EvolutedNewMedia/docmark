@@ -93,7 +93,7 @@ abstract class View
      */
     public function generateOutput()
     {
-        $template = $this->docmark->config['themeName'] . '::' .$this->template;
+        $template = $this->docmark->config['themeName'] . '::' . $this->template;
 
         try {
 
@@ -145,7 +145,7 @@ abstract class View
         $finder = new Finder();
 
         // setup the root for all the doc files
-        $docRoot = \Stringy\Stringy::create(ROOT . $this->docmark->config['docRoot'], 'UTF-8');
+        $docRoot = \Stringy\Stringy::create(ROOT . $this->docmark->config['docs']['root'], 'UTF-8');
         if ((string) $docRoot->last(1) === '/') {
 
             $docRoot = (string) $docRoot->substr(0, -1);

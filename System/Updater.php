@@ -50,7 +50,7 @@ class Updater extends \Robo\Tasks
         }
 
         $this->taskCopyDir([
-            STORAGE_ROOT . $source => ROOT . $this->docmark->config['docRoot']
+            STORAGE_ROOT . $source => ROOT . $this->docmark->config['docs']['root']
         ])->run();
     }
 
@@ -65,7 +65,7 @@ class Updater extends \Robo\Tasks
     public function checkGithub($data)
     {
         // get the repo name
-        list($url, $repoName) = explode('github.com/', $this->docmark->config['docRepo']);
+        list($url, $repoName) = explode('github.com/', $this->docmark->config['docs']['repo']);
         $repoName = str_replace('.git', '', $repoName);
 
         // decode the json from github
@@ -74,7 +74,7 @@ class Updater extends \Robo\Tasks
         if (
             $this->docmark->request->headers->get('x-github-event') === 'push' &&
             strtolower(trim($repoName)) === strtolower(trim($data->repository->full_name)) &&
-            $data->refs === 'refs/heads/' . $this->docmark->config['docRepoBranch']
+            $data->refs === 'refs/heads/' . $this->docmark->config['docs']['repoBranch']
         ) {
 
             return true;
@@ -97,15 +97,15 @@ class Updater extends \Robo\Tasks
             $this->taskGitStack()
                 ->stopOnFail()
                 ->dir(STORAGE_ROOT)
-                ->cloneRepo($this->docmark->config['docRepo'], 'github')
+                ->cloneRepo($this->docmark->config['docs']['repo'], 'github')
                 ->run();
         }
 
         $this->taskGitStack()
             ->stopOnFail()
             ->dir(STORAGE_ROOT . 'github')
-            ->checkout($this->docmark->config['docRepoBranch'])
-            ->pull('origin', $this->docmark->config['docRepoBranch'])
+            ->checkout($this->docmark->config['docs']['repoBranch'])
+            ->pull('origin', $this->docmark->config['docs']['repoBranch'])
             ->run();
 
 
