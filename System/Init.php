@@ -60,15 +60,15 @@ define(
 // -------------------------------------------------------------------
 // Set the system autoloader
 // -------------------------------------------------------------------
-if (file_exists(ROOT . 'System' . DS . 'Psr4AutoloaderClass.php')) {
+if (file_exists(ROOT . 'System' . DS . 'Autoloader.php')) {
 
-    require_once(ROOT . 'System' . DS . 'Psr4AutoloaderClass.php');
+    require_once(ROOT . 'System' . DS . 'Autoloader.php');
 } else {
 
     die("Fatal Error: System autoload file not found!");
 }
 
-$loader = new Psr4AutoloaderClass;
+$loader = new Autoloader;
 $loader->register();
 $loader->addNamespace('DocMark', dirname(__DIR__));
 
