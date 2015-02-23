@@ -53,7 +53,7 @@ $config = array(
         /**
          * Documentation Root (Relative to root)
          */
-        'root' => 'docs/'
+        'root' => 'docs/',
 
         /**
          * URL to the repo containing your docs, for use with post commit hooks

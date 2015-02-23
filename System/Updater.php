@@ -74,7 +74,7 @@ class Updater extends \Robo\Tasks
         if (
             $this->docmark->request->headers->get('x-github-event') === 'push' &&
             strtolower(trim($repoName)) === strtolower(trim($data->repository->full_name)) &&
-            $data->refs === 'refs/heads/' . $this->docmark->config['docs']['repoBranch']
+            $data->ref === 'refs/heads/' . $this->docmark->config['docs']['repoBranch']
         ) {
 
             return true;
