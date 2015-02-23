@@ -1,11 +1,12 @@
 # Changelog
 
-## 0.3.0 - TBA
+## 0.3.0 - 23/02/2015
 ---
 
 * Added github webhook to update docs upon pushing to the correct git branch
+* Grouped the docs / repo / branch name config items together
 
-## 0.2.1 - 31/01/2014
+## 0.2.1 - 31/01/2015
 ---
 
 * Switched to use League\CommonMark for markdown processing
@@ -27,7 +28,7 @@
 * Amended folder names and file paths to prevent case sensitive issues.
 
 ## 0.1.2 - 24/09/2014
---- 
+---
 
 * Added changelog
 
