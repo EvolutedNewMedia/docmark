@@ -26,7 +26,7 @@ $config = array(
     /**
      * set the home url
      */
-    'siteLink' => 'http:/docmark.com/',
+    'siteLink' => 'http:/doc-mark.com/',
 
     /**
      * set the title for the main index page

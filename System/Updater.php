@@ -108,7 +108,6 @@ class Updater extends \Robo\Tasks
             ->pull('origin', $this->docmark->config['docs']['repoBranch'])
             ->run();
 
-
         $this->moveFiles('github');
     }
 
