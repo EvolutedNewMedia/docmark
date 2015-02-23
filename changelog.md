@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.1 - 23/02/2015
+---
+
+* Fixed bug with missing comma in config
+* Fixed bug with updater checking wrong variable name.
+
 ## 0.3.0 - 23/02/2015
 ---
 
