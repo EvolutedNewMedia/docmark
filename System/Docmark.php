@@ -86,7 +86,7 @@ class DocMark
         $query = $this->request->query->keys();
 
         // setup the root for all the doc files
-        $docRoot = ROOT . $this->config['docRoot'];
+        $docRoot = ROOT . $this->config['docs']['root'];
 
         if (isset($query['0']) && ! empty($query['0'])) {
 
