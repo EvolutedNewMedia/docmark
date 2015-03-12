@@ -54,7 +54,7 @@
                             </div>
 
                             <div class="poweredby">
-                                Built with DocMark
+                                Built with <a href="http://doc-mark.com" target="_blank">DocMark</a>
                             </div>
                         </div>
                     </div>
