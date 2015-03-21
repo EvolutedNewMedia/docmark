@@ -7,3 +7,4 @@ vendor/
 # System Ignores
 docs/*
 Storage/*
+assets/*
