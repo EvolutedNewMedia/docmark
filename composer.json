@@ -16,6 +16,7 @@
         "symfony/finder": "2.6.*",
         "league/commonmark": "0.*",
         "league/plates": "3.*",
-        "codegyre/robo": "0.5.*"
+        "codegyre/robo": "0.5.*",
+        "snscripts/advanced-assets": "dev-dev"
     }
 }
