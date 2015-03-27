@@ -1,5 +1,12 @@
 # DocMark
 
+[![Author](http://img.shields.io/badge/author-@mikebarlow-red.svg?style=flat-square)](https://twitter.com/mikebarlow)
+[![Source Code](http://img.shields.io/badge/source-snscripts/docmark-brightgreen.svg?style=flat-square)](https://github.com/snscripts/docmark)
+[![Latest Version](https://img.shields.io/github/release/snscripts/docmark.svg?style=flat-square)](https://github.com/snscripts/docmark/releases)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://github.com/snscripts/docmark/blob/master/LICENSE)
+
+## Introduction
+
 DocMark is a markdown to html documentation (or standard site) generator. DocMark will take the folder and markdown file structure from the docs folder and turn it into a fully fledge site either on the fly or from a cached version (Cache / static site generation coming in a later version).
 
 ## Requirements
