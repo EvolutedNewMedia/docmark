@@ -2,7 +2,7 @@
     "name": "snscripts/docmark",
     "description": "Documentation generator, converts markdown files to a fully functional html website.",
     "license": "MIT",
-    "version": "0.3.1",
+    "version": "0.4.0",
     "authors": [
         {
             "name": "Mike Barlow",
@@ -17,6 +17,6 @@
         "league/commonmark": "0.*",
         "league/plates": "3.*",
         "codegyre/robo": "0.5.*",
-        "snscripts/advanced-assets": "dev-dev"
+        "snscripts/advanced-assets": "1.*"
     }
 }
