@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.0 - TBC
+
+* Created and implemented folder based assets extension for PlatesPHP
+* Swapped location of assets to be in fallback theme so assets can acted like templates.
+
 ## 0.3.1 - 23/02/2015
 
 * Fixed bug with missing comma in config
