@@ -10,9 +10,12 @@ DocMark is a markdown to html documentation (or standard site) generator. DocMar
 
 ## Installation
 
-After checking out DocMark from Git, navigate to the root of the project and run a `composer install` to install all the dependencies.
-
-You will also want to edit some of the site title / link values found in the config file at `DocMarkRoot/System/Config.php`
+* Check DocMark out from Git.
+* Navigate to root of project and run `composer install` to install dependencies
+* Edit any values required within `DocMarkRoot/System/Config.php`
+* Make `DocMarkRoot/assets` writable.
+* Place your markdown files in the `doc` directory (or which ever directory you have specified in Config.php)
+* Visit your installation of DocMark in the browser to view the On-The-Fly generation of your files.
 
 ### Webhooks
 
@@ -34,9 +37,11 @@ If you wish to change a portion of the design, simply copy the file path and the
 
 ### Assets
 
-CSS / JS / Images are all stored in the assets directory and loaded in via a [Plates Extension](http://platesphp.com/extensions/asset/) and you should place any of your own assets in this directory within the correct subdirectory.
+Assets are handled by our custom Plates Extension. Assets are now handled like the templates with folders and fallback directories.
 
-Sadly the extension does not support Themes or fallbacks like the templates so all assets for every theme must go in this folder. *A custom asset extension is planned to recify this*
+All assets are located in `DocMarkRoot/themes/fallback/assets`. These can be overridden by change those files directly or if you wish to keep them intact, create a new file within `DocMarkRoot/themes/YOURTHEMENAME/assets` to override the original asset.
+
+For full documentation on assets, please see [this readme](https://github.com/snscripts/advanced-assets/blob/master/README.md).
 
 ## Documenting
 
@@ -103,4 +108,4 @@ This script is released under the MIT licence and as such you agree to use this 
 
 ## Support
 
-Support is currently only through GitHub so please create an issue if you run into any problems.
+Create an issue here on GitHub or contact me on twitter [@mikebarlow](https://twitter.com/mikebarlow).
