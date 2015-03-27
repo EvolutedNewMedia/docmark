@@ -7,7 +7,7 @@
         <title><?=$this->e($pageTitle . ' :: ' . $site['title'])?></title>
         <meta name="description" content="<?=$this->e($pageTitle . ' :: ' . $site['title'])?>" />
         <meta name="author" content="<?=$site['title']?>">
-        <link rel="icon" href="<?=$this->asset('/assets/img/favicon.ico')?>" type="image/x-icon">
+        <link rel="icon" href="<?=$this->asset('default::img/favicon.ico')?>" type="image/x-icon">
         <!-- Mobile -->
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto:400,100,300,700" rel="stylesheet" type="text/css">
 
         <!-- CSS -->
-        <link href="<?=$this->asset('/assets/css/style.css')?>" rel="stylesheet" type="text/css">
+        <link href="<?=$this->asset('default::css/style.css')?>" rel="stylesheet" type="text/css">
 
     </head>
     <body>
@@ -54,7 +54,7 @@
                             </div>
 
                             <div class="poweredby">
-                                Built with DocMark
+                                Built with <a href="http://doc-mark.com" target="_blank">DocMark</a>
                             </div>
                         </div>
                     </div>
@@ -78,11 +78,11 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script>
             if (typeof jQuery == 'undefined')
-                document.write(unescape("%3Cscript src='<?=$this->asset('/assets/js/jquery-1.11.0.min.js')?>' type='text/javascript'%3E%3C/script%3E"));
+                document.write(unescape("%3Cscript src='<?=$this->asset('default::js/jquery-1.11.0.min.js')?>' type='text/javascript'%3E%3C/script%3E"));
         </script>
 
         <!-- hightlight.js -->
-        <script src="<?=$this->asset('/assets/js/highlight.min.js')?>"></script>
+        <script src="<?=$this->asset('default::js/highlight.min.js')?>"></script>
         <script>hljs.initHighlightingOnLoad();</script>
 
         <!--[if lt IE 9]>

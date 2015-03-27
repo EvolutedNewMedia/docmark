@@ -1,16 +1,12 @@
 {
-    "name": "turn24/docmark",
+    "name": "snscripts/docmark",
     "description": "Documentation generator, converts markdown files to a fully functional html website.",
     "license": "MIT",
-    "version": "0.3.1",
+    "version": "0.4.0",
     "authors": [
         {
             "name": "Mike Barlow",
-            "email": "mike@turn24.com"
-        },
-        {
-            "name": "Ricky Mills",
-            "email": "rick@turn24.com"
+            "email": "mike@mikebarlow.co.uk"
         }
     ],
     "minimum-stability": "dev",
@@ -20,6 +16,7 @@
         "symfony/finder": "2.6.*",
         "league/commonmark": "0.*",
         "league/plates": "3.*",
-        "codegyre/robo": "0.5.*"
+        "codegyre/robo": "0.5.*",
+        "snscripts/advanced-assets": "1.*"
     }
 }

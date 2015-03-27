@@ -4,20 +4,20 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8ca4fb1f573b82ba0ef67a05c5b12cab",
+    "hash": "d4898fb26cb4c6d564170f24d463c7d2",
     "packages": [
         {
             "name": "codegyre/robo",
-            "version": "0.5.1",
+            "version": "0.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codegyre/Robo.git",
-                "reference": "c75c2f21c41c851803a25b2ff1ed018fe10b6cf6"
+                "reference": "a98a14a7d2284776c2038480b59edc142c80a01f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codegyre/Robo/zipball/c75c2f21c41c851803a25b2ff1ed018fe10b6cf6",
-                "reference": "c75c2f21c41c851803a25b2ff1ed018fe10b6cf6",
+                "url": "https://api.github.com/repos/Codegyre/Robo/zipball/a98a14a7d2284776c2038480b59edc142c80a01f",
+                "reference": "a98a14a7d2284776c2038480b59edc142c80a01f",
                 "shasum": ""
             },
             "require": {
@@ -55,7 +55,7 @@
                 }
             ],
             "description": "Modern task runner",
-            "time": "2015-01-27 02:41:11"
+            "time": "2015-02-24 01:42:23"
         },
         {
             "name": "danielstjules/stringy",
@@ -178,31 +178,31 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "962e2ddaae13dcf1a2a6493ccf2e4ec3d72123df"
+                "reference": "48f645369535fb86b928356fdaa0cd72ac964511"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/962e2ddaae13dcf1a2a6493ccf2e4ec3d72123df",
-                "reference": "962e2ddaae13dcf1a2a6493ccf2e4ec3d72123df",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/48f645369535fb86b928356fdaa0cd72ac964511",
+                "reference": "48f645369535fb86b928356fdaa0cd72ac964511",
                 "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
-                "php": ">=5.3.3"
+                "php": ">=5.4.8"
             },
             "replace": {
                 "colinodell/commonmark-php": "*"
             },
             "require-dev": {
                 "erusev/parsedown": "~1.0",
-                "jgm/commonmark": "0.17",
+                "jgm/commonmark": "0.18",
                 "michelf/php-markdown": "~1.4",
                 "phpunit/phpunit": "~4.3"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.7-dev"
+                    "dev-master": "0.8-dev"
                 }
             },
             "autoload": {
@@ -229,7 +229,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2015-02-18 14:46:36"
+            "time": "2015-03-20 14:54:59"
         },
         {
             "name": "league/plates",
@@ -284,23 +284,75 @@
             "time": "2014-10-21 12:06:12"
         },
         {
+            "name": "snscripts/advanced-assets",
+            "version": "dev-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/snscripts/advanced-assets.git",
+                "reference": "b75c6c2d14826c452dd3c5338ca4efb4c788c25d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/snscripts/advanced-assets/zipball/b75c6c2d14826c452dd3c5338ca4efb4c788c25d",
+                "reference": "b75c6c2d14826c452dd3c5338ca4efb4c788c25d",
+                "shasum": ""
+            },
+            "require": {
+                "league/plates": "3.*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Snscripts\\AdvancedAssets\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Barlow",
+                    "email": "mike@mikebarlow.co.uk",
+                    "role": "Developer"
+                }
+            ],
+            "description": "[Plates Extension] More advanced asset handling, works with folders / fallbacks directories.",
+            "homepage": "https://github.com/snscripts/advanced-assets",
+            "keywords": [
+                "assets",
+                "plates",
+                "template",
+                "templating",
+                "view"
+            ],
+            "time": "2015-03-21 19:06:54"
+        },
+        {
             "name": "symfony/config",
             "version": "2.7.x-dev",
             "target-dir": "Symfony/Component/Config",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Config.git",
-                "reference": "a634f4e901f5d20696020980cae70d8d94c6193d"
+                "reference": "d52e949c0625601918f52139a6358d0d614152bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Config/zipball/a634f4e901f5d20696020980cae70d8d94c6193d",
-                "reference": "a634f4e901f5d20696020980cae70d8d94c6193d",
+                "url": "https://api.github.com/repos/symfony/Config/zipball/d52e949c0625601918f52139a6358d0d614152bd",
+                "reference": "d52e949c0625601918f52139a6358d0d614152bd",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.9",
                 "symfony/filesystem": "~2.3|~3.0.0"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "~2.7|~3.0.0"
             },
             "type": "library",
             "extra": {
@@ -329,7 +381,7 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "http://symfony.com",
-            "time": "2015-02-11 07:17:51"
+            "time": "2015-03-12 14:31:07"
         },
         {
             "name": "symfony/console",
@@ -338,12 +390,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "289113e60aad754d35b50347f66ecd3a4d96d03c"
+                "reference": "3ed3fb0c80ee0292b19a1a78234ef7801cc7f0e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/289113e60aad754d35b50347f66ecd3a4d96d03c",
-                "reference": "289113e60aad754d35b50347f66ecd3a4d96d03c",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/3ed3fb0c80ee0292b19a1a78234ef7801cc7f0e8",
+                "reference": "3ed3fb0c80ee0292b19a1a78234ef7801cc7f0e8",
                 "shasum": ""
             },
             "require": {
@@ -352,6 +404,7 @@
             "require-dev": {
                 "psr/log": "~1.0",
                 "symfony/event-dispatcher": "~2.1|~3.0.0",
+                "symfony/phpunit-bridge": "~2.7|~3.0.0",
                 "symfony/process": "~2.1|~3.0.0"
             },
             "suggest": {
@@ -386,7 +439,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2015-02-12 11:03:31"
+            "time": "2015-03-13 17:40:40"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -395,12 +448,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "2dc33aff298b20ad099ac456034aebc5055f02fb"
+                "reference": "186349c2966529804e38685f671e64746dde220b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/2dc33aff298b20ad099ac456034aebc5055f02fb",
-                "reference": "2dc33aff298b20ad099ac456034aebc5055f02fb",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/186349c2966529804e38685f671e64746dde220b",
+                "reference": "186349c2966529804e38685f671e64746dde220b",
                 "shasum": ""
             },
             "require": {
@@ -411,6 +464,7 @@
                 "symfony/config": "~2.0,>=2.0.5|~3.0.0",
                 "symfony/dependency-injection": "~2.6|~3.0.0",
                 "symfony/expression-language": "~2.6|~3.0.0",
+                "symfony/phpunit-bridge": "~2.7|~3.0.0",
                 "symfony/stopwatch": "~2.3|~3.0.0"
             },
             "suggest": {
@@ -444,7 +498,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "http://symfony.com",
-            "time": "2015-02-11 07:17:51"
+            "time": "2015-03-13 17:50:01"
         },
         {
             "name": "symfony/filesystem",
@@ -453,16 +507,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Filesystem.git",
-                "reference": "cb5db1cf2440ceb68760ef0e70f9d1d4ba135444"
+                "reference": "cd84fd71bce5e9e136cab7e1fbc07af877e3a932"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/cb5db1cf2440ceb68760ef0e70f9d1d4ba135444",
-                "reference": "cb5db1cf2440ceb68760ef0e70f9d1d4ba135444",
+                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/cd84fd71bce5e9e136cab7e1fbc07af877e3a932",
+                "reference": "cd84fd71bce5e9e136cab7e1fbc07af877e3a932",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.9"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "~2.7|~3.0.0"
             },
             "type": "library",
             "extra": {
@@ -491,7 +548,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "http://symfony.com",
-            "time": "2015-02-16 09:13:25"
+            "time": "2015-03-12 14:31:07"
         },
         {
             "name": "symfony/finder",
@@ -500,16 +557,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Finder.git",
-                "reference": "92dae7ae3ac4550ae46bb7a9bab04568323c3e7c"
+                "reference": "bebc7479c566fa4f14b9bcef9e32e719eabec74e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Finder/zipball/92dae7ae3ac4550ae46bb7a9bab04568323c3e7c",
-                "reference": "92dae7ae3ac4550ae46bb7a9bab04568323c3e7c",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/bebc7479c566fa4f14b9bcef9e32e719eabec74e",
+                "reference": "bebc7479c566fa4f14b9bcef9e32e719eabec74e",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "~2.7"
             },
             "type": "library",
             "extra": {
@@ -538,7 +598,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "http://symfony.com",
-            "time": "2015-02-11 07:12:14"
+            "time": "2015-03-12 10:28:44"
         },
         {
             "name": "symfony/http-foundation",
@@ -547,19 +607,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpFoundation.git",
-                "reference": "9d46a79565b655ad431108a610ab62502470326a"
+                "reference": "d527885e37b55ec0e3dc6f4b70566d0f9b2f2388"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/9d46a79565b655ad431108a610ab62502470326a",
-                "reference": "9d46a79565b655ad431108a610ab62502470326a",
+                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/d527885e37b55ec0e3dc6f4b70566d0f9b2f2388",
+                "reference": "d527885e37b55ec0e3dc6f4b70566d0f9b2f2388",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "symfony/expression-language": "~2.4"
+                "symfony/expression-language": "~2.4",
+                "symfony/phpunit-bridge": "~2.7"
             },
             "type": "library",
             "extra": {
@@ -591,7 +652,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "http://symfony.com",
-            "time": "2015-02-11 07:12:14"
+            "time": "2015-03-13 17:37:22"
         },
         {
             "name": "symfony/process",
@@ -600,16 +661,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Process.git",
-                "reference": "b2afcf65b787d1550bc0cc8ad2991a1b04650f70"
+                "reference": "661d4e58afde74d919da4169cf809dd1a5f7734d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Process/zipball/b2afcf65b787d1550bc0cc8ad2991a1b04650f70",
-                "reference": "b2afcf65b787d1550bc0cc8ad2991a1b04650f70",
+                "url": "https://api.github.com/repos/symfony/Process/zipball/661d4e58afde74d919da4169cf809dd1a5f7734d",
+                "reference": "661d4e58afde74d919da4169cf809dd1a5f7734d",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.9"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "~2.7|~3.0.0"
             },
             "type": "library",
             "extra": {
@@ -638,13 +702,15 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "http://symfony.com",
-            "time": "2015-02-11 12:46:36"
+            "time": "2015-03-13 17:50:01"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "snscripts/advanced-assets": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
