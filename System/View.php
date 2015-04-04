@@ -120,7 +120,7 @@ abstract class View
     public function generatePage($return = false)
     {
         $contents = file_get_contents($this->view);
-        $page = $this->converter->convertToHtml($contents);
+        $page = $this->converter->transform($contents);
         $this->templates->addData(
             array(
                 'page' => $page

@@ -128,7 +128,7 @@ class DocMark
         );
 
         // load the converter
-        $converter = new \League\CommonMark\CommonMarkConverter();
+        $converter = new \Michelf\MarkdownExtra();
 
         if ($path !== false && isset($isHome) && $isHome) {
 
