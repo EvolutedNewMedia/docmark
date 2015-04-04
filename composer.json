@@ -14,7 +14,7 @@
         "danielstjules/stringy": "1.*",
         "symfony/http-foundation": "2.6.*",
         "symfony/finder": "2.6.*",
-        "league/commonmark": "0.*",
+        "michelf/php-markdown": "1.*",
         "league/plates": "3.*",
         "codegyre/robo": "0.5.*",
         "snscripts/advanced-assets": "1.*"
