@@ -1,6 +1,11 @@
 # Changelog
 
-## 0.4.0 - TBC
+## 0.4.1 - 04/04/2015
+
+* Fix for github updater not removing delete doc files
+* Reinstated MarkdownExtra due to CommonMark not supporting tables
+
+## 0.4.0 - 27/03/2015
 
 * Created and implemented folder based assets extension for PlatesPHP
 * Swapped location of assets to be in fallback theme so assets can acted like templates.
