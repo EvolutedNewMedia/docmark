@@ -49,7 +49,7 @@ class Updater extends \Robo\Tasks
             return false;
         }
 
-        $this->taskCopyDir([
+        $this->taskMirrorDir([
             STORAGE_ROOT . $source => ROOT . $this->docmark->config['docs']['root']
         ])->run();
     }
