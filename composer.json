@@ -2,7 +2,7 @@
     "name": "snscripts/docmark",
     "description": "Documentation generator, converts markdown files to a fully functional html website.",
     "license": "MIT",
-    "version": "0.4.0",
+    "version": "0.5.0",
     "authors": [
         {
             "name": "Mike Barlow",
@@ -11,12 +11,10 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "danielstjules/stringy": "1.*",
-        "symfony/http-foundation": "2.6.*",
-        "symfony/finder": "2.6.*",
-        "michelf/php-markdown": "1.*",
-        "league/plates": "3.*",
-        "codegyre/robo": "0.5.*",
-        "snscripts/advanced-assets": "1.*"
+        "snscripts/docmark-core": "dev-dev"
+    },
+
+    "require-dev": {
+        "symfony/var-dumper": "2.7.*"
     }
 }

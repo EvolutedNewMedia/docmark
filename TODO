@@ -1,8 +1,0 @@
-TODO
-====
-
-Better way of doing the site titles / meta data
-Tidier way to do menu templates (duplicated code)
-
-Caching (half way between on the fly and the static pages)
-Command Line interface for generating static pages

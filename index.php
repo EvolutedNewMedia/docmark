@@ -1,6 +1,6 @@
 <?php
 /**
- * Turn24/DocMark
+ * Snscripts/DocMark
  *
  * Index file, receives all requests and process
  *
@@ -8,7 +8,7 @@
  * @copyright  Copyright (c), Turn 24 Ltd.
  * @license MIT
  * @link http://github.com/Turn24/DocMark
- * @since  Version 0.1.0
+ * @since  Version 0.5.0
  */
 
 if (! defined('DS')) {
@@ -16,17 +16,44 @@ if (! defined('DS')) {
 }
 
 // -------------------------------------------------------------------
-// Setup DocMark
+// Set the root directory and add trailing slash
 // -------------------------------------------------------------------
-require_once('System' . DS . 'Init.php');
+define(
+    'ROOT',
+    rtrim(
+        dirname(__FILE__),
+        '/'
+    ) . DS
+);
 
 // -------------------------------------------------------------------
-// Run DocMark
+// Set the storage directory (used for auto-updating docs)
 // -------------------------------------------------------------------
+define(
+    'STORAGE_ROOT',
+    ROOT . 'storage' . DS
+);
 
-// process the request
-// will return a view object
-$view = $docmark->process();
+// -------------------------------------------------------------------
+// load composer
+// -------------------------------------------------------------------
+if (file_exists(ROOT . 'vendor' . DS . 'autoload.php')) {
+    require_once(ROOT . 'vendor' . DS . 'autoload.php');
+} else {
+    die("Fatal Error: Composer autoload file not found!");
+}
 
-// Display the page to the user
-$view->display();
+// -------------------------------------------------------------------
+// load Docmark
+// -------------------------------------------------------------------
+$DocMark = new \Snscripts\Docmark\Docmark;
+
+// -------------------------------------------------------------------
+// boot Docmark
+// -------------------------------------------------------------------
+$DocMark->boot();
+
+// -------------------------------------------------------------------
+// run Docmark
+// -------------------------------------------------------------------
+$DocMark->run();
