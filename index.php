@@ -4,10 +4,10 @@
  *
  * Index file, receives all requests and process
  *
- * @author  Turn24 Team <info@turn24.com>
- * @copyright  Copyright (c), Turn 24 Ltd.
+ * @author  Mike Barlow <mike@mikebarlow.co.uk>
+ * @copyright  Copyright (c), Mike Barlow.
  * @license MIT
- * @link http://github.com/Turn24/DocMark
+ * @link http://github.com/Snscripts/DocMark
  * @since  Version 0.5.0
  */
 
