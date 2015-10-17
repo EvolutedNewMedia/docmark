@@ -324,12 +324,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/snscripts/docmark-core.git",
-                "reference": "994688c5a1dd5604bd41533e59c052518bded30e"
+                "reference": "601e84ce78691023cedf65d4c3244a7cdac88bf6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/snscripts/docmark-core/zipball/994688c5a1dd5604bd41533e59c052518bded30e",
-                "reference": "994688c5a1dd5604bd41533e59c052518bded30e",
+                "url": "https://api.github.com/repos/snscripts/docmark-core/zipball/601e84ce78691023cedf65d4c3244a7cdac88bf6",
+                "reference": "601e84ce78691023cedf65d4c3244a7cdac88bf6",
                 "shasum": ""
             },
             "require": {
@@ -348,7 +348,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Snscripts\\DocMark\\": "src"
+                    "Snscripts\\Docmark\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -369,7 +369,7 @@
                 "Markdown Site Generator",
                 "html"
             ],
-            "time": "2015-10-14 21:02:33"
+            "time": "2015-10-17 20:48:50"
         },
         {
             "name": "symfony/config",
