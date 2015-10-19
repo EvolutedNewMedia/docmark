@@ -59,6 +59,60 @@
             "time": "2015-08-31 17:35:30"
         },
         {
+            "name": "dflydev/dot-access-data",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dflydev/dflydev-dot-access-data.git",
+                "reference": "7a0960d088119818ce7687d200c363b01d183cbe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dflydev/dflydev-dot-access-data/zipball/7a0960d088119818ce7687d200c363b01d183cbe",
+                "reference": "7a0960d088119818ce7687d200c363b01d183cbe",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Dflydev\\DotAccessData": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dragonfly Development Inc.",
+                    "email": "info@dflydev.com",
+                    "homepage": "http://dflydev.com"
+                },
+                {
+                    "name": "Beau Simensen",
+                    "email": "beau@dflydev.com",
+                    "homepage": "http://beausimensen.com"
+                }
+            ],
+            "description": "Given a deep data structure, access data by dot notation.",
+            "homepage": "https://github.com/dflydev/dflydev-dot-access-data",
+            "keywords": [
+                "access",
+                "data",
+                "dot",
+                "notation"
+            ],
+            "time": "2015-08-13 03:51:18"
+        },
+        {
             "name": "henrikbjorn/lurker",
             "version": "dev-master",
             "source": {
@@ -324,23 +378,24 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/snscripts/docmark-core.git",
-                "reference": "601e84ce78691023cedf65d4c3244a7cdac88bf6"
+                "reference": "9431a4caac9121b9232182e3e327c32dcb2b0619"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/snscripts/docmark-core/zipball/601e84ce78691023cedf65d4c3244a7cdac88bf6",
-                "reference": "601e84ce78691023cedf65d4c3244a7cdac88bf6",
+                "url": "https://api.github.com/repos/snscripts/docmark-core/zipball/9431a4caac9121b9232182e3e327c32dcb2b0619",
+                "reference": "9431a4caac9121b9232182e3e327c32dcb2b0619",
                 "shasum": ""
             },
             "require": {
                 "codegyre/robo": "0.5.*",
+                "dflydev/dot-access-data": "1.*",
                 "league/plates": "3.*",
                 "michelf/php-markdown": "1.*",
                 "php": ">=5.4.0",
                 "pimple/pimple": "3.*",
                 "snscripts/advanced-assets": "1.*",
-                "symfony/finder": "2.6.*",
-                "symfony/http-foundation": "2.6.*"
+                "symfony/finder": "2.7.*",
+                "symfony/http-foundation": "2.7.*"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.0"
@@ -369,7 +424,7 @@
                 "Markdown Site Generator",
                 "html"
             ],
-            "time": "2015-10-17 20:48:50"
+            "time": "2015-10-19 12:43:17"
         },
         {
             "name": "symfony/config",
@@ -537,12 +592,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "fc3fe52fef85e1f3e7775ffad92539e16c20e0af"
+                "reference": "ea5234f76d21b9960fe838114a39d56aa05516bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/fc3fe52fef85e1f3e7775ffad92539e16c20e0af",
-                "reference": "fc3fe52fef85e1f3e7775ffad92539e16c20e0af",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/ea5234f76d21b9960fe838114a39d56aa05516bb",
+                "reference": "ea5234f76d21b9960fe838114a39d56aa05516bb",
                 "shasum": ""
             },
             "require": {
@@ -575,37 +630,33 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-11 08:29:26"
+            "time": "2015-10-18 20:23:24"
         },
         {
             "name": "symfony/finder",
-            "version": "2.6.x-dev",
-            "target-dir": "Symfony/Component/Finder",
+            "version": "2.7.x-dev",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/Finder.git",
-                "reference": "203a10f928ae30176deeba33512999233181dd28"
+                "url": "https://github.com/symfony/finder.git",
+                "reference": "2ffb4e9598db3c48eb6d0ae73b04bbf09280c59d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Finder/zipball/203a10f928ae30176deeba33512999233181dd28",
-                "reference": "203a10f928ae30176deeba33512999233181dd28",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/2ffb4e9598db3c48eb6d0ae73b04bbf09280c59d",
+                "reference": "2ffb4e9598db3c48eb6d0ae73b04bbf09280c59d",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "symfony/phpunit-bridge": "~2.7"
+                "php": ">=5.3.9"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.6-dev"
+                    "dev-master": "2.7-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
+                "psr-4": {
                     "Symfony\\Component\\Finder\\": ""
                 }
             },
@@ -625,42 +676,40 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2015-07-09 16:02:48"
+            "time": "2015-10-11 09:39:48"
         },
         {
             "name": "symfony/http-foundation",
-            "version": "2.6.x-dev",
-            "target-dir": "Symfony/Component/HttpFoundation",
+            "version": "2.7.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "e8fd1b73ac1c3de1f76c73801ddf1a8ecb1c1c9c"
+                "reference": "2d6868fe0718c34017f304d7fa3d306b6f52f46c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/e8fd1b73ac1c3de1f76c73801ddf1a8ecb1c1c9c",
-                "reference": "e8fd1b73ac1c3de1f76c73801ddf1a8ecb1c1c9c",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/2d6868fe0718c34017f304d7fa3d306b6f52f46c",
+                "reference": "2d6868fe0718c34017f304d7fa3d306b6f52f46c",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": ">=5.3.9"
             },
             "require-dev": {
-                "symfony/expression-language": "~2.4",
-                "symfony/phpunit-bridge": "~2.7"
+                "symfony/expression-language": "~2.4"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.6-dev"
+                    "dev-master": "2.7-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
+                "psr-4": {
                     "Symfony\\Component\\HttpFoundation\\": ""
                 },
                 "classmap": [
-                    "Symfony/Component/HttpFoundation/Resources/stubs"
+                    "Resources/stubs"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -679,7 +728,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2015-07-22 10:08:40"
+            "time": "2015-10-18 20:23:18"
         },
         {
             "name": "symfony/process",
@@ -687,12 +736,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "4e1daf58b375ea7c506d525dc7801df1c9a6ebbd"
+                "reference": "82fb0fce303439d147a20a7426326876407a41de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/4e1daf58b375ea7c506d525dc7801df1c9a6ebbd",
-                "reference": "4e1daf58b375ea7c506d525dc7801df1c9a6ebbd",
+                "url": "https://api.github.com/repos/symfony/process/zipball/82fb0fce303439d147a20a7426326876407a41de",
+                "reference": "82fb0fce303439d147a20a7426326876407a41de",
                 "shasum": ""
             },
             "require": {
@@ -725,7 +774,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-11 08:29:26"
+            "time": "2015-10-18 20:23:24"
         }
     ],
     "packages-dev": [
