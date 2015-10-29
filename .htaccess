@@ -1,11 +1,13 @@
 <IfModule mod_rewrite.c>
     RewriteEngine on
 
+    RewriteCond %{THE_REQUEST} ^.*/index\.php
+    RewriteRule ^(.*)index.php$ /$1 [R=301,L]
+
     # check it's not an actual file / directory
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-l
     RewriteCond $1 !^(assets)
-    RewriteRule ^(.*)$ index.php?/$1 [NC,QSA,L]
-
+    RewriteRule ^(.*)$ index.php?path=$1 [NC,QSA,L]
 </IfModule>
