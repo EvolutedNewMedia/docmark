@@ -2,6 +2,11 @@
 
 return [
     /**
+     * debug mode
+     */
+    'debugMode' => true,
+
+    /**
      * set the theme to use
      */
     'themeName' => 'default',
@@ -19,10 +24,5 @@ return [
     /**
      * set the title for the main index page
      */
-    'indexTitle' => 'Welcome',
-
-    /**
-     * Documentation Root (Relative to root)
-     */
-    'root' => 'docs/'
+    'indexTitle' => 'Welcome'
 ];

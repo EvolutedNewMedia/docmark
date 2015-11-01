@@ -113,6 +113,64 @@
             "time": "2015-08-13 03:51:18"
         },
         {
+            "name": "filp/whoops",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/filp/whoops.git",
+                "reference": "9a393ceb80f7497b6513feb574638e87048fed55"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/9a393ceb80f7497b6513feb574638e87048fed55",
+                "reference": "9a393ceb80f7497b6513feb574638e87048fed55",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Whoops": "src/"
+                },
+                "classmap": [
+                    "src/deprecated"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Filipe Dobreira",
+                    "homepage": "https://github.com/filp",
+                    "role": "Developer"
+                }
+            ],
+            "description": "php error handling for cool kids",
+            "homepage": "https://github.com/filp/whoops",
+            "keywords": [
+                "error",
+                "exception",
+                "handling",
+                "library",
+                "silex-provider",
+                "whoops",
+                "zf2"
+            ],
+            "time": "2015-09-27 09:47:06"
+        },
+        {
             "name": "henrikbjorn/lurker",
             "version": "dev-master",
             "source": {
@@ -378,17 +436,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/snscripts/docmark-core.git",
-                "reference": "19a9a65fd04ee31aa782aa547effbaf983c6e603"
+                "reference": "bcd95df15cf2c3e3acba3ca6dd009146fbeb8da4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/snscripts/docmark-core/zipball/19a9a65fd04ee31aa782aa547effbaf983c6e603",
-                "reference": "19a9a65fd04ee31aa782aa547effbaf983c6e603",
+                "url": "https://api.github.com/repos/snscripts/docmark-core/zipball/bcd95df15cf2c3e3acba3ca6dd009146fbeb8da4",
+                "reference": "bcd95df15cf2c3e3acba3ca6dd009146fbeb8da4",
                 "shasum": ""
             },
             "require": {
                 "codegyre/robo": "0.5.*",
                 "dflydev/dot-access-data": "1.*",
+                "filp/whoops": "1.*",
                 "league/plates": "3.*",
                 "michelf/php-markdown": "1.*",
                 "php": ">=5.4.0",
@@ -426,7 +485,7 @@
                 "Markdown Site Generator",
                 "html"
             ],
-            "time": "2015-10-29 22:36:57"
+            "time": "2015-11-01 14:21:13"
         },
         {
             "name": "symfony/config",
@@ -434,12 +493,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
-                "reference": "647a2a148d8ce2847ea75e58608b0a89f5a1dd1b"
+                "reference": "8210f85f3482e4491aaa5b3f56ae469e7b5a5c8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/config/zipball/647a2a148d8ce2847ea75e58608b0a89f5a1dd1b",
-                "reference": "647a2a148d8ce2847ea75e58608b0a89f5a1dd1b",
+                "url": "https://api.github.com/repos/symfony/config/zipball/8210f85f3482e4491aaa5b3f56ae469e7b5a5c8e",
+                "reference": "8210f85f3482e4491aaa5b3f56ae469e7b5a5c8e",
                 "shasum": ""
             },
             "require": {
@@ -455,7 +514,10 @@
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\Config\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -473,7 +535,7 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-11 08:29:26"
+            "time": "2015-10-30 20:15:42"
         },
         {
             "name": "symfony/console",
@@ -481,12 +543,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "34038aba56a9c2aacc166fb9d5c402fd10843c4f"
+                "reference": "2c18b786853b2c162f43692dcd87bdec67091223"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/34038aba56a9c2aacc166fb9d5c402fd10843c4f",
-                "reference": "34038aba56a9c2aacc166fb9d5c402fd10843c4f",
+                "url": "https://api.github.com/repos/symfony/console/zipball/2c18b786853b2c162f43692dcd87bdec67091223",
+                "reference": "2c18b786853b2c162f43692dcd87bdec67091223",
                 "shasum": ""
             },
             "require": {
@@ -512,7 +574,10 @@
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\Console\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -530,7 +595,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-28 04:17:44"
+            "time": "2015-10-30 20:15:42"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -538,12 +603,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "22db6ac518817c5459e704dbd21727777a764f32"
+                "reference": "a5eb815363c0388e83247e7e9853e5dbc14999cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/22db6ac518817c5459e704dbd21727777a764f32",
-                "reference": "22db6ac518817c5459e704dbd21727777a764f32",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/a5eb815363c0388e83247e7e9853e5dbc14999cc",
+                "reference": "a5eb815363c0388e83247e7e9853e5dbc14999cc",
                 "shasum": ""
             },
             "require": {
@@ -569,7 +634,10 @@
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\EventDispatcher\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -587,7 +655,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-20 17:27:01"
+            "time": "2015-10-30 20:15:42"
         },
         {
             "name": "symfony/filesystem",
@@ -595,12 +663,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "ea5234f76d21b9960fe838114a39d56aa05516bb"
+                "reference": "47a82a96b2a4cfb54026edcbbcc5a427c274c043"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/ea5234f76d21b9960fe838114a39d56aa05516bb",
-                "reference": "ea5234f76d21b9960fe838114a39d56aa05516bb",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/47a82a96b2a4cfb54026edcbbcc5a427c274c043",
+                "reference": "47a82a96b2a4cfb54026edcbbcc5a427c274c043",
                 "shasum": ""
             },
             "require": {
@@ -615,7 +683,10 @@
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\Filesystem\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -633,7 +704,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-18 20:23:24"
+            "time": "2015-10-30 20:15:42"
         },
         {
             "name": "symfony/finder",
@@ -641,12 +712,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "2ffb4e9598db3c48eb6d0ae73b04bbf09280c59d"
+                "reference": "a06a0c0ff7db3736a50d530c908cca547bf13da9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/2ffb4e9598db3c48eb6d0ae73b04bbf09280c59d",
-                "reference": "2ffb4e9598db3c48eb6d0ae73b04bbf09280c59d",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/a06a0c0ff7db3736a50d530c908cca547bf13da9",
+                "reference": "a06a0c0ff7db3736a50d530c908cca547bf13da9",
                 "shasum": ""
             },
             "require": {
@@ -661,7 +732,10 @@
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\Finder\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -679,7 +753,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-11 09:39:48"
+            "time": "2015-10-30 20:10:21"
         },
         {
             "name": "symfony/http-foundation",
@@ -687,12 +761,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "621d28f3d3abbb043b990fcba99b60bc1a8ec61d"
+                "reference": "4f092d8e5838064449201d8e9210026f6f40c43b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/621d28f3d3abbb043b990fcba99b60bc1a8ec61d",
-                "reference": "621d28f3d3abbb043b990fcba99b60bc1a8ec61d",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/4f092d8e5838064449201d8e9210026f6f40c43b",
+                "reference": "4f092d8e5838064449201d8e9210026f6f40c43b",
                 "shasum": ""
             },
             "require": {
@@ -713,6 +787,9 @@
                 },
                 "classmap": [
                     "Resources/stubs"
+                ],
+                "exclude-from-classmap": [
+                    "/Tests/"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -731,7 +808,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-29 10:45:39"
+            "time": "2015-10-30 20:10:21"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -795,12 +872,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "7881472d4b374a3b48988ca8621f15245a667f95"
+                "reference": "7d645ea9d254e488bca808f80e3ed3cb6d1bebcd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/7881472d4b374a3b48988ca8621f15245a667f95",
-                "reference": "7881472d4b374a3b48988ca8621f15245a667f95",
+                "url": "https://api.github.com/repos/symfony/process/zipball/7d645ea9d254e488bca808f80e3ed3cb6d1bebcd",
+                "reference": "7d645ea9d254e488bca808f80e3ed3cb6d1bebcd",
                 "shasum": ""
             },
             "require": {
@@ -815,7 +892,10 @@
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\Process\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -833,7 +913,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-23 14:52:08"
+            "time": "2015-10-30 20:15:42"
         }
     ],
     "packages-dev": [
@@ -843,12 +923,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "eb033050050916b6bfa51be71009ef67b16046c9"
+                "reference": "7c795c531087200ec1427a8fc5825af6f68352a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/eb033050050916b6bfa51be71009ef67b16046c9",
-                "reference": "eb033050050916b6bfa51be71009ef67b16046c9",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/7c795c531087200ec1427a8fc5825af6f68352a7",
+                "reference": "7c795c531087200ec1427a8fc5825af6f68352a7",
                 "shasum": ""
             },
             "require": {
@@ -869,7 +949,10 @@
                 ],
                 "psr-4": {
                     "Symfony\\Component\\VarDumper\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -891,7 +974,7 @@
                 "debug",
                 "dump"
             ],
-            "time": "2015-10-25 17:17:38"
+            "time": "2015-10-30 20:13:17"
         }
     ],
     "aliases": [],
