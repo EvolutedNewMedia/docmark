@@ -3,8 +3,9 @@
 return [
     /**
      * Documentation Root (Relative to root)
+     * no trailing slash
      */
-    'root' => 'docs/',
+    'root' => 'docs',
 
     /**
      * the filename to use for "index" pages
