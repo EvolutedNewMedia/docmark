@@ -543,12 +543,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "8bf0b5fdfb963ee81a9e5f9c957b75180a6447aa"
+                "reference": "441e34136188e3e04b1a7d652b5ff1e1b35d114a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/8bf0b5fdfb963ee81a9e5f9c957b75180a6447aa",
-                "reference": "8bf0b5fdfb963ee81a9e5f9c957b75180a6447aa",
+                "url": "https://api.github.com/repos/symfony/console/zipball/441e34136188e3e04b1a7d652b5ff1e1b35d114a",
+                "reference": "441e34136188e3e04b1a7d652b5ff1e1b35d114a",
                 "shasum": ""
             },
             "require": {
@@ -595,7 +595,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2016-01-03 15:33:41"
+            "time": "2016-01-06 09:59:23"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -761,12 +761,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "190071422a4ddb47aed0964b227ef71a3820738b"
+                "reference": "6203ebddfac8019251303d063ac2d30a79253c58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/190071422a4ddb47aed0964b227ef71a3820738b",
-                "reference": "190071422a4ddb47aed0964b227ef71a3820738b",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/6203ebddfac8019251303d063ac2d30a79253c58",
+                "reference": "6203ebddfac8019251303d063ac2d30a79253c58",
                 "shasum": ""
             },
             "require": {
@@ -808,7 +808,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2016-01-03 15:32:00"
+            "time": "2016-01-06 09:57:37"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -875,12 +875,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "fcf372616d0e6a4491cec690153ea43aa4d04a6e"
+                "reference": "6f1979c3b0f4c22c77a8a8971afaa7dd07f082ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/fcf372616d0e6a4491cec690153ea43aa4d04a6e",
-                "reference": "fcf372616d0e6a4491cec690153ea43aa4d04a6e",
+                "url": "https://api.github.com/repos/symfony/process/zipball/6f1979c3b0f4c22c77a8a8971afaa7dd07f082ac",
+                "reference": "6f1979c3b0f4c22c77a8a8971afaa7dd07f082ac",
                 "shasum": ""
             },
             "require": {
@@ -916,7 +916,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2016-01-03 15:33:41"
+            "time": "2016-01-06 09:59:23"
         }
     ],
     "packages-dev": [
