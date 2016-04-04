@@ -31,7 +31,8 @@ if (php_sapi_name() === 'cli') {
     $data = file_get_contents('php://input');
 }
 
-if ($Updater->checkGithub($data)) {
-
-    $Updater->updateFromGithub();
+// Check if we need to update the docs, if the repo type is GIT then we can't validate the push 
+// so we just run update. Otherwise check it is a valid change to the docs.
+if ($Updater->isValidPush($data)) {
+    $Updater->updateFromGit();
 }

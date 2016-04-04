@@ -63,6 +63,13 @@ $config = array(
         'repo' => '',
 
         /**
+         * Supported Repo types are: GIT, GITHUB, GITLAB. 
+         * Using repoType GIT with Github and Gitlab will work it just won't check if the webhook
+         * was called for the right branch
+         */
+        'repoType' => "GITHUB",
+
+        /**
          * The branch to pull from
          */
         'repoBranch' => 'master'
