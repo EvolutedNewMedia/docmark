@@ -86,11 +86,11 @@ class Updater extends \Robo\Tasks
         // Set which header to look for based on the repoType
         switch ($this->docmark->config['docs']['repoType']) {
             case 'GITHUB':
-                $header = 'x-github-event'
+                $header = 'x-github-event';
                 break;
             
             default:
-                $header = 'X-Gitlab-Event'
+                $header = 'X-Gitlab-Event';
                 break;
         }
 
